@@ -28,6 +28,7 @@ Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 ```
 
 ##Collection/Map just interface. The interal data structure to implement them is Array/Tree/Linked List
+```
 	Collection:
 		int size()
 		boolean isEmpty()
@@ -74,7 +75,7 @@ Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 		getLast()
 		removeFirst()
 		removeLast()
-
+```
 	Misc
 	====
 	Converting a List to an Array - toArray()
