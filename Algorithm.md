@@ -17,4 +17,12 @@ Recursive function that makes multiple calls, the runtime will often look like O
 ---
 ###permutation factorial 
 
-#
+#How to design&develope an algorithm
+---
+In Crack Coding, it have following way to design an algorithm
+1) Look for BUD (Bottleneck, Unneccecary Operation, Duplicated Operations)
+2) DIY
+3) Simplify and Generalize
+4) Basecase and build
+5) Brainstorm of Data structure
+6) Check if we used all information we know.
