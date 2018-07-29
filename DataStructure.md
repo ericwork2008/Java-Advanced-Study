@@ -81,7 +81,39 @@ Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 	Converting a List to an Array - toArray()
 	Using an Array as a List - Arrays.asList()
 	Java Collections.binarySearch
-  
+  #Array
+  ---
+Array have following frequently used methods
+```
+- Partial sort: Arrays.sort(arr, 0, arr.length())
+- Copy: Arrays.copyOf(arr, arr.length())
+- target=Arrays.copyOfRange(original,from,to)
+
+- ArrayList.add(index, elem);
+
+- 2darray data[][] size is data.length * data[0].length
+- Arrays.asList([1,2,3]);
+- Arrays.toString(int[] arr) => string representation: "[1,2,3,4]"
+```
+Array in java is fixed length. ArrayList is resizable (An ArrayList can resize itself as needed)
+
+# String & Character
+String have following high frequency methods
+- Character.isDigit(x)
+- Character.getNumericValue();
+- String.split("regular Expression"); 
+- String.indexOf()
+- String.isEmpty()
+- String.subString()
+- String.contains(CharSequence x)
+- String.valueOf(charArrary)
+- String.compareTo( "XXX" ), lexicographically order
+- char[] rst = String.toCharArray()
+- String.trim()
+
+Questions: palindrome/permutation/unified
+
+#StringBuilder
   #Vector vs. ArrayList
   ---
   
