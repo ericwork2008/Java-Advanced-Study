@@ -139,13 +139,20 @@ class Node{
 }
 ```
 Iteration Linked List, sometimes will can use recursive/runner pointer
+## Stack
+---
+- peek(), pop(), push(), isEmpty()
+- Stack<Object> stack = new Stack<>(); Push generic Object to stack
+	
+## Queue
+---
+- add(),remove(), peek(), isEmpty(). For Java Queue Class, please refer to the #Java Collection
 
-  #Vector vs. ArrayList
-  ---
-  
-  #Tree
-  ---
-  #Tries
-  ---
-  #Graphs
-  ---
+#Vector vs. ArrayList
+---
+#Tree
+---
+#Tries
+---
+#Graphs
+---
