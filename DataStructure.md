@@ -5,6 +5,7 @@
 	https://www.ntu.edu.sg/home/ehchua/programming/java/J5c_Collection.html
 	https://softeng.polito.it/slides/07-JavaCollections.pdf
 	https://pdfs.semanticscholar.org/2d4a/a0f63c26dee36310c6c1ce3fe1fe4b4551e9.pdf
+	https://www.geeksforgeeks.org/data-structures/
 	
 #Java Collection
 ------
@@ -96,6 +97,8 @@ Array have following frequently used methods
 - Arrays.toString(int[] arr) => string representation: "[1,2,3,4]"
 ```
 Array in java is fixed length. ArrayList is resizable (An ArrayList can resize itself as needed)
+
+Array
 
 # String & Character
 String have following high frequency methods
@@ -257,3 +260,584 @@ The expression tree will be like
 
 #Graphs
 ---
+Representation method
+- Adjacency Matrix
+- Adjacency List
+
+In the website there are many implementation
+https://algs4.cs.princeton.edu/41graph/Graph.java.html
+
+Here prefer following (Copied from Geekforgeeks)
+```
+// A class to represent a graph edge
+class Edge implements Comparable<Edge>
+{
+    int src, dest, weight;
+    
+    // Comparator function used for sorting edges 
+    // based on their weight
+    public int compareTo(Edge compareEdge) {
+                return this.weight-compareEdge.weight;
+    }
+};
+
+// A class to represent a subset for union-find
+class subset
+{
+    int parent, rank;
+};
+
+public class Graph {
+    int V, E;    // V-> no. of vertices & E->no.of edges
+    Edge edge[]; // collection of all edges
+
+    LinkedList<Integer> adjListArray[]; //Adj List
+    
+    // constructor 
+    Graph(int V)
+    {
+        this.V = V;
+
+        // define the size of array as 
+        // number of vertices
+        adjListArray = new LinkedList[V];
+         
+        // Create a new list for each vertex
+        // such that adjacent nodes can be stored
+        for(int i = 0; i < V ; i++){
+            adjListArray[i] = new LinkedList<>();
+        }
+    }
+    
+    // Creates a graph with V vertices and E edges
+    Graph(int v, int e)
+    {
+        V = v;
+        E = e;
+        edge = new Edge[E];
+        for (int i=0; i<e; ++i)
+            edge[i] = new Edge();
+    }
+    /**
+     * Initializes a new graph that is a deep copy of {@code G}.
+     *
+     * @param  G the graph to copy
+     */
+    public Graph(Graph G) {
+        this(G.V());
+        this.E = G.E();
+        for (int v = 0; v < G.V(); v++) {
+            // reverse so that adjacency list is in same order as original
+            Stack<Integer> reverse = new Stack<Integer>();
+            for (int w : G.adjListArray[v]) {
+                reverse.push(w);
+            }
+            for (int w : reverse) {
+            	adjListArray[v].add(w);
+            }
+        }
+    }
+    // Adds an edge to an undirected graph
+    static void addEdge(Graph graph, int src, int dest)
+    {
+        validateVertex(src);
+        validateVertex(dest);
+        E++;
+        
+        // Add an edge from src to dest. 
+        graph.adjListArray[src].addFirst(dest);
+         
+        // Since graph is undirected, add an edge from dest
+        // to src also
+        graph.adjListArray[dest].addFirst(src);
+    }
+
+    static void printPath(Graph graph, int s, int v) {
+        if(v==s) {
+            System.out.println("vertex:"+ v);
+        }else if (parent[v] == -1) {
+            System.out.print("no path from " + s + " to " + v + "exists");
+        }else {
+            printPath(graph,s,parent[v]);
+        }
+    }
+
+
+
+    /**
+     * Returns the number of vertices in this graph.
+     *
+     * @return the number of vertices in this graph
+     */
+    public int V() {
+        return V;
+    }
+
+    /**
+     * Returns the number of edges in this graph.
+     *
+     * @return the number of edges in this graph
+     */
+    public int E() {
+        return E;
+    }
+
+    // throw an IllegalArgumentException unless {@code 0 <= v < V}
+    private void validateVertex(int v) {
+        if (v < 0 || v >= V)
+            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+    }
+
+    /**
+     * Returns the vertices adjacent to vertex {@code v}.
+     *
+     * @param  v the vertex
+     * @return the vertices adjacent to vertex {@code v}, as an iterable
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     */
+    public Iterable<Integer> adj(int v) {
+        validateVertex(v);
+        return adjListArray[v];
+    }
+
+    /**
+     * Returns the degree of vertex {@code v}.
+     *
+     * @param  v the vertex
+     * @return the degree of vertex {@code v}
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     */
+    public int degree(int v) {
+        validateVertex(v);
+        return adjListArray[v].size();
+    }
+
+
+    /**
+     * Returns a string representation of this graph.
+     *
+     * @return the number of vertices <em>V</em>, followed by the number of edges <em>E</em>,
+     *         followed by the <em>V</em> adjacency lists
+     */
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append(V + " vertices, " + E + " edges " + NEWLINE);
+        for (int v = 0; v < V; v++) {
+            s.append(v + ": ");
+            for (int w : adj[v]) {
+                s.append(w + " ");
+            }
+            s.append(NEWLINE);
+        }
+        return s.toString();
+    }
+    /*
+      void DFS(G) {
+        for each vertex u in G.V
+        	u.visited = false
+        	u.p =  NIL
+        time = 0 
+        for each vertex u in G.V
+        if u.visited == false
+        	DFS-VISIT(G, u)
+       }
+       
+       void DFS-VISIT(G, u) {
+        	time = time + 1 // white vertex u has just been discovered
+        	u.d = time
+        	u.visited = true
+        	for each v in G.Adj[u] // explore edge (u,v)
+        		if v.visited == false
+        			v.p = u
+        			DFS-VISIT(G, v);
+        	time = time + 1
+       }
+     */
+   // A function used by DFS
+   void DFSVisit(int v,boolean visited[]) {
+       // Mark the current node as visited and print it
+       visited[v] = true;
+       System.out.print(v+" ");
+
+       // Recur for all the vertices adjacent to this vertex
+       Iterator<Integer> i = adj[v].listIterator();
+       while (i.hasNext()) {
+           int n = i.next();
+           if (!visited[n])
+               DFSVisit(n, visited);
+       }
+   }
+   // The function to do DFS traversal. It uses recursive DFSUtil()
+   void DFS(int v) {
+       // Mark all the vertices as not visited(set as
+       // false by default in java)
+       boolean visited[] = new boolean[V];
+
+       // Call the recursive helper function to print DFS traversal
+       DFSVisit(v, visited);
+   }
+   
+   /*
+   public void BFS(Graph G, Vertex s) {
+        for each vertex u in G.V - {s}
+        	u.visited = false
+        	u.d = 1
+        	u.p = NIL
+        	
+        s.visited=true
+        s.d = 0
+        s.p = NIL
+        create empty Q 
+        ENQUEUE(Q, s)
+        while Q != empty
+        	u = DEQUEUE(Q)
+        	for each v in G.Adj[u]
+        		if v.visited == false
+        			v.visited = true
+        			v.d = u.d + 1
+        			v.p = u
+        			ENQUEUE(Q, v)
+   }
+   
+   */
+   void BFS(int s) {
+       // Mark all the vertices as not visited(By default
+       // set as false)
+       boolean visited[] = new boolean[V];
+
+       // Create a queue for BFS. FIFO queue
+       LinkedList<Integer> queue = new LinkedList<Integer>();
+
+       // Mark the current node as visited and enqueue it
+       visited[s]=true;
+       queue.add(s);
+
+       while (queue.size() != 0)
+       {
+           // Dequeue a vertex from queue and print it
+           s = queue.poll();
+           System.out.print(s+" ");
+
+           // Get all adjacent vertices of the dequeued vertex s
+           // If a adjacent has not been visited, then mark it
+           // visited and enqueue it
+           Iterator<Integer> i = adj[s].listIterator();
+           while (i.hasNext())
+           {
+               int n = i.next();
+               if (!visited[n])
+               {
+                   visited[n] = true;
+                   queue.add(n);
+               }
+           }
+       }
+   }
+
+   // A utility function to find set of an element i
+   // (uses path compression technique)
+   int find(subset subsets[], int i)
+   {
+       // find root and make root as parent of i (path compression)
+       if (subsets[i].parent != i)
+           subsets[i].parent = find(subsets, subsets[i].parent);
+
+       return subsets[i].parent;
+   }
+
+   // A function that does union of two sets of x and y
+   // (uses union by rank)
+   void Union(subset subsets[], int x, int y)
+   {
+       int xroot = find(subsets, x);
+       int yroot = find(subsets, y);
+
+       // Attach smaller rank tree under root of high rank tree
+       // (Union by Rank)
+       if (subsets[xroot].rank < subsets[yroot].rank)
+           subsets[xroot].parent = yroot;
+       else if (subsets[xroot].rank > subsets[yroot].rank)
+           subsets[yroot].parent = xroot;
+
+       // If ranks are same, then make one as root and increment
+       // its rank by one
+       else
+       {
+           subsets[yroot].parent = xroot;
+           subsets[xroot].rank++;
+       }
+   }
+   
+   
+   /**
+    * ========================= 	
+       TOPOLOGICAL-SORT(G)
+           1 call DFS(G) to compute finishing times v.f for each vertex v
+           2 as each vertex is finished, insert it onto the front of a linked list(or STACK)
+           3 return the linked list of vertices
+    */
+   void topologicalSortUtil(int v, boolean visited[], Stack stack){
+       // Mark the current node as visited.
+       visited[v] = true;
+       Integer i;
+       
+       // Recur for all the vertices adjacent to this
+       // vertex
+       Iterator<Integer> it = adj[v].iterator();
+       while (it.hasNext())
+       {
+          i = it.next();
+          if (!visited[i])
+              topologicalSortUtil(i, visited, stack);
+       }
+       
+       // Post-Order process.
+       // Push current vertex to stack which stores result
+       // In Stack node haven't next. Looks like put no successor in first.
+       stack.push(new Integer(v));
+   }
+   
+   void topologicalSort()
+   {
+       Stack stack = new Stack();
+
+       // Mark all the vertices as not visited
+       boolean visited[] = new boolean[V];
+       for (int i = 0; i < V; i++)
+           visited[i] = false;
+
+       // Call the recursive helper function to store
+       // Topological Sort starting from all vertices
+       // one by one
+       for (int i = 0; i < V; i++)
+           if (visited[i] == false)
+               topologicalSortUtil(i, visited, stack);
+
+       // Print contents of stack
+       while (stack.empty()==false)
+           System.out.print(stack.pop() + " ");
+   }
+   /**
+    * BFS, get adjusted vertex which have the minium edge value. Result is the vertex & parent
+    * 	==============
+       MST-PRIM(G,w,r)   O(E + V lgV)
+           for each u in G.V
+               u.key = MAX							//Set every key=MAX
+               u.p = NIL	
+           r.key = 0
+           Q = G.V									//Q have all vertex
+           while Q != empty
+               u = EXTRACT-MIN(Q)					//Get the min key value vertex
+               for each v in G.Adj[u]
+                   if v in Q and w(u,v)< v.key     //Reduce v.key
+                       v.p = u
+                       v.key = w(u,v)
+    */
+   // A utility function to find the vertex with minimum key
+   // value, from the set of vertices not yet included in MST
+   int minKey(int key[], Boolean mstSet[])
+   {
+       // Initialize min value
+       int min = Integer.MAX_VALUE, min_index=-1;
+
+       for (int v = 0; v < V; v++)
+           if (mstSet[v] == false && key[v] < min)
+           {
+               min = key[v];
+               min_index = v;
+           }
+
+       return min_index;
+   }
+   // Function to construct and print MST for a graph represented
+   //  using adjacency matrix representation
+   void primMST(int graph[][])
+   {
+       // Array to store constructed MST
+       int parent[] = new int[V];
+
+       // Key values used to pick minimum weight edge in cut
+       int key[] = new int [V];
+
+       // To represent set of vertices not yet included in MST
+       Boolean mstSet[] = new Boolean[V];
+
+       // Initialize all keys as INFINITE
+       for (int i = 0; i < V; i++)
+       {
+           key[i] = Integer.MAX_VALUE;
+           mstSet[i] = false;
+       }
+
+       // Always include first 1st vertex in MST.
+       key[0] = 0;     // Make key 0 so that this vertex is
+                       // picked as first vertex
+       parent[0] = -1; // First node is always root of MST
+
+       // The MST will have V vertices
+       for (int count = 0; count < V-1; count++)
+       {
+           // Pick thd minimum key vertex from the set of vertices
+           // not yet included in MST
+           int u = minKey(key, mstSet);
+
+           // Add the picked vertex to the MST Set
+           mstSet[u] = true;
+
+           // Update key value and parent index of the adjacent
+           // vertices of the picked vertex. Consider only those
+           // vertices which are not yet included in MST
+           for (int v = 0; v < V; v++)
+
+               // graph[u][v] is non zero only for adjacent vertices of m
+               // mstSet[v] is false for vertices not yet included in MST
+               // Update the key only if graph[u][v] is smaller than key[v]
+               if (graph[u][v]!=0 && mstSet[v] == false &&
+                   graph[u][v] <  key[v])
+               {
+                   parent[v]  = u;
+                   key[v] = graph[u][v];
+               }
+       }
+
+       // print the constructed MST
+       printMST(parent, V, graph);
+   }
+   /**
+    * Find and Union. Choice min edge then find/Union until all vertex processed.
+    * If two end of the edge isn't in the UNION side, then UNION it.
+    * Result is the edge set	
+    * ===================
+       MST-KRUSKAL(G,w) :: O(E lgV)
+           A = empty
+           for each vertex v in G.V
+               MAKE-SET(v)
+           sort the edges of G.E into nondecreasing order by weight w
+           for each edge (u,v) in G.E, taken in nondecreasing order by weight
+               if FIND-SET(u) != FIND-SET(v)
+               A = A U {(u,v)}
+        		UNION(u,v)
+           return A
+    */
+   // The main function to construct MST using Kruskal's algorithm
+   void KruskalMST()
+   {
+       Edge result[] = new Edge[V];  // Tnis will store the resultant MST
+       int e = 0;  // An index variable, used for result[]
+       int i = 0;  // An index variable, used for sorted edges
+       for (i=0; i<V; ++i)
+           result[i] = new Edge();
+
+       // Step 1:  Sort all the edges in non-decreasing order of their
+       // weight.  If we are not allowed to change the given graph, we
+       // can create a copy of array of edges
+       Arrays.sort(edge);
+
+       // Allocate memory for creating V ssubsets
+       subset subsets[] = new subset[V];
+       for(i=0; i<V; ++i)
+           subsets[i]=new subset();
+
+       // Create V subsets with single elements
+       for (int v = 0; v < V; ++v)
+       {
+           subsets[v].parent = v;
+           subsets[v].rank = 0;
+       }
+
+       i = 0;  // Index used to pick next edge
+
+       // Number of edges to be taken is equal to V-1
+       while (e < V - 1)
+       {
+           // Step 2: Pick the smallest edge. And increment 
+           // the index for next iteration
+           Edge next_edge = new Edge();
+           next_edge = edge[i++];
+
+           int x = find(subsets, next_edge.src);
+           int y = find(subsets, next_edge.dest);
+
+           // If including this edge does't cause cycle,
+           // include it in result and increment the index 
+           // of result for next edge
+           if (x != y)
+           {
+               result[e++] = next_edge;
+               Union(subsets, x, y);
+           }
+           // Else discard the next_edge
+       }
+
+       // print the contents of result[] to display
+       // the built MST
+       System.out.println("Following are the edges in " + 
+                                    "the constructed MST");
+       for (i = 0; i < e; ++i)
+           System.out.println(result[i].src+" -- " + 
+                  result[i].dest+" == " + result[i].weight);
+   }
+   
+   
+   /**
+    * DIJKSTRA(G,w,s) find short path
+       INITIALIZE-SINGLE-SOURCE(G, s)
+           S = empty
+           Q = G.V							//All vertex in the Queue
+           while Q != empty
+               u = EXTRACT-MIN(Q)			//u is visited here
+               S = S U {u}
+               for each vertex in G.Adj[u]	//Need by pass visited vertex
+                   RELAX(u,v,w)
+    */
+   // Funtion that implements Dijkstra's single source shortest path
+   // algorithm for a graph represented using adjacency matrix
+   // representation
+   void dijkstra(int graph[][], int src)
+   {
+       int dist[] = new int[V]; // The output array. dist[i] will hold
+                                // the shortest distance from src to i
+
+       // sptSet[i] will true if vertex i is included in shortest
+       // path tree or shortest distance from src to i is finalized
+       Boolean sptSet[] = new Boolean[V];
+
+       // Initialize all distances as INFINITE and stpSet[] as false
+       for (int i = 0; i < V; i++)
+       {
+           dist[i] = Integer.MAX_VALUE;
+           sptSet[i] = false;
+       }
+
+       // Distance of source vertex from itself is always 0
+       dist[src] = 0;
+
+       // Find shortest path for all vertices
+       for (int count = 0; count < V-1; count++)
+       {
+           // Pick the minimum distance vertex from the set of vertices
+           // not yet processed. u is always equal to src in first
+           // iteration.
+           int u = minDistance(dist, sptSet);
+
+           // Mark the picked vertex as processed
+           sptSet[u] = true;
+
+           // Update dist value of the adjacent vertices of the
+           // picked vertex.
+           for (int v = 0; v < V; v++)
+
+               // Update dist[v] only if is not in sptSet, there is an
+               // edge from u to v, and total weight of path from src to
+               // v through u is smaller than current value of dist[v]
+               if (!sptSet[v] && graph[u][v]!=0 &&
+                       dist[u] != Integer.MAX_VALUE &&
+                       dist[u]+graph[u][v] < dist[v])
+                   dist[v] = dist[u] + graph[u][v];
+       }
+
+       // print the constructed distance array
+       printSolution(dist, V);
+   }
+}
+```
