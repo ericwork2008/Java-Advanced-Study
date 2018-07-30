@@ -117,6 +117,8 @@ Questions: palindrome/permutation/unified
 ----
 StringBuffer is a resizable array. Can be used to avoid high operation drawback of String when you add other strings.
 
+#Vector vs. ArrayList
+---
 ## Linked List
 ---
 Linked List have Singly Linked List
@@ -148,10 +150,48 @@ Iteration Linked List, sometimes will can use recursive/runner pointer
 ---
 - add(),remove(), peek(), isEmpty(). For Java Queue Class, please refer to the #Java Collection
 
-#Vector vs. ArrayList
 ---
 #Tree
 ---
+A simple version of graph which haven't cycle, and each node can have a list of children
+- Binary Tree:  each node has up to  two chidren
+- Binary Search Tree: All left nodes <= current node.val < all right nodes
+- Balanced
+- Completed Tree: every level is fully filled, except the last level which is filled from left to right.
+- Full binary Tree: each node have zero or 2 children, NO node will have 1 child
+- Perfect binary tree: full and complete
+
+### Binary Tree Traversal
+- preorder, inorder, post-order
+- inorder more often
+- Can be implemented By dfs, bfs
+
+#### Inorder Traversal
+- DFS: check leaf => dfs left => process root => dfs right
+- stack: in while loop: deep dive to left leaf => stack.pop() => `node = node.right`
+
+	stack.push(root);
+	TreeNode node = root;
+	while(!stack.isEmpty()) {
+	   //Left first
+	   while (node != null && node.left != null) { 
+		   stack.add(node.left);
+		   node = node.left;
+	   }
+	   //Process left/curr
+	   node = stack.pop();
+	   
+	   // do something with node
+	   node = node.right; // VERY IMPORTANT
+	   if (node != null) {
+		   stack.push(node);
+	   }
+	}
+
+- `node = node.right` is critical, otherwise it'll be in infinite loop
+- alternatively: we could set left = null, but that's disruptive to original structure, not recommended.
+
+
 #Tries
 ---
 #Graphs
