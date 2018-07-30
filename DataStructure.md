@@ -113,7 +113,32 @@ String have following high frequency methods
 
 Questions: palindrome/permutation/unified
 
-#StringBuilder
+#StringBuffer
+----
+StringBuffer is a resizable array. Can be used to avoid high operation drawback of String when you add other strings.
+
+## Linked List
+---
+Linked List have Singly Linked List
+class Node{
+	int data;
+	Node next;
+	public Node(int data){
+		this.data=data;
+		next=null;
+	}
+	void append(int d){
+		Node newNode = new Node(d);
+		Node current = this;
+		while(current.next!=null){
+			current=current.next;
+		}
+		current.next=newNode;
+	}
+}
+
+Iteration Linked List, sometimes will can use recursive/runner pointer
+
   #Vector vs. ArrayList
   ---
   
