@@ -120,6 +120,7 @@ StringBuffer is a resizable array. Can be used to avoid high operation drawback 
 ## Linked List
 ---
 Linked List have Singly Linked List
+```
 class Node{
 	int data;
 	Node next;
@@ -136,7 +137,7 @@ class Node{
 		current.next=newNode;
 	}
 }
-
+```
 Iteration Linked List, sometimes will can use recursive/runner pointer
 
   #Vector vs. ArrayList
