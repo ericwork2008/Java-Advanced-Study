@@ -169,7 +169,7 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 #### Inorder Traversal
 - DFS: check leaf => dfs left => process root => dfs right
 - stack: in while loop: deep dive to left leaf => stack.pop() => `node = node.right`
-
+```
 	stack.push(root);
 	TreeNode node = root;
 	while(!stack.isEmpty()) {
@@ -187,7 +187,7 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 		   stack.push(node);
 	   }
 	}
-
+```
 - `node = node.right` is critical, otherwise it'll be in infinite loop
 - alternatively: we could set left = null, but that's disruptive to original structure, not recommended.
 
