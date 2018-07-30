@@ -81,7 +81,7 @@ Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 	Converting a List to an Array - toArray()
 	Using an Array as a List - Arrays.asList()
 	Java Collections.binarySearch
-  #Array
+#Array
   ---
 Array have following frequently used methods
 ```
@@ -119,7 +119,7 @@ StringBuffer is a resizable array. Can be used to avoid high operation drawback 
 
 #Vector vs. ArrayList
 ---
-## Linked List
+# Linked List
 ---
 Linked List have Singly Linked List
 ```
@@ -141,16 +141,34 @@ class Node{
 }
 ```
 Iteration Linked List, sometimes will can use recursive/runner pointer
-## Stack
+# Stack
 ---
 - peek(), pop(), push(), isEmpty()
 - Stack<Object> stack = new Stack<>(); Push generic Object to stack
-	
-## Queue
+### Stack Usage
+- Reverse Stack
+- stack, change recursive to no recursive
+- Stack can be implemented with LinkedList, adding/removing from same side of the list
+
+##Monotonous stack
+---
+Monotonous stack template:
+```
+item = someItem; // ex: item in for loop
+while (!stack.isEmpty() && (item.property compareTo stack.peek().property)) {
+	topItem = stack.pop();
+	// Do something with the topItem
+}
+stack.push(item);
+```
+
+#Queue
 ---
 - add(),remove(), peek(), isEmpty(). For Java Queue Class, please refer to the #Java Collection
+- queue = new LinkedList<...>() Queue can use LinkedList. Add from the last/end of the list; Return/remove from the head of the list. 
+- PriorityQueue: new Comparator
+- PriorityQueue
 
----
 #Tree
 ---
 A simple version of graph which haven't cycle, and each node can have a list of children
@@ -161,12 +179,12 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - Full binary Tree: each node have zero or 2 children, NO node will have 1 child
 - Perfect binary tree: full and complete
 
-### Binary Tree Traversal
+## Binary Tree Traversal
 - preorder, inorder, post-order
 - inorder more often
 - Can be implemented By dfs, bfs
 
-#### Inorder Traversal
+### Inorder Traversal
 - DFS: check leaf => dfs left => process root => dfs right
 - stack: in while loop: deep dive to left leaf => stack.pop() => `node = node.right`
 ```
@@ -191,8 +209,51 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - `node = node.right` is critical, otherwise it'll be in infinite loop
 - alternatively: we could set left = null, but that's disruptive to original structure, not recommended.
 
-
-#Tries
+##Expression Tree
 ---
+```
+Example
+For the expression (2*6-(23+7)/(1+2)) 
+which can be represented by ["2" "*" "6" "-" "(" "23" "+" "7" ")" "/" "(" "1" "+" "2" ")"]. 
+The expression tree will be like
+
+                 [ - ]
+             /          \
+        [ * ]              [ / ]
+      /     \           /         \
+    [ 2 ]  [ 6 ]      [ + ]        [ + ]
+                     /    \       /      \
+                   [ 23 ][ 7 ] [ 1 ]   [ 2 ] .
+
+```
+##Tries
+---
+- Prefix Tree
+- n-ary tree
+- Can tell if string is a valid prefix in O(K) time, k = str.length
+
+## Segment Tree
+- Another name: Interval Tree. 
+- https://en.wikipedia.org/wiki/Segment_tree
+- https://en.wikipedia.org/wiki/Interval_tree
+- https://www.geeksforgeeks.org/interval-tree/
+
+## Red Black Tree
+- one kind of self-balancing binary search tree
+- Each node of the binary tree has an extra bit, and that bit is often interpreted as the color (red or black) of the node
+- search O(logn), n = total # of nodes in the tree
+- deletion/insertion/tree rearrangement && coloring: O(logn)
+
+## B-Tree
+- https://en.wikipedia.org/wiki/B-tree
+
+## AVL Tree
+- The sub-trees of every node differ in height by at most one.
+- Every sub-tree is an AVL tree
+
+### Usage
+- Storage system than read/write large blocks of data.
+- Commonly used in database, filesystem
+
 #Graphs
 ---
