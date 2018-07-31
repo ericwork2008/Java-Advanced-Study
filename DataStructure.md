@@ -16,6 +16,13 @@
 		* [Post order Traversal](#Postorder_Traversal)
 	* [Convert DFS to while loop by Stack](#dfs_to_loop_by_stack)
 * [Graphs](#Graphs)
+	* [Define Graph](#graphs_definition)
+	* [DFS](#dfs)
+	* [BFS](#bfs)
+	* [Topological Sort](#Topological_sort)
+	* [PRIM MST](#prim)
+	* [MST-KRUSKAL](#kruskal)
+	* [Dijkstra](#dijkstra)
 
 
 # Reference:	
