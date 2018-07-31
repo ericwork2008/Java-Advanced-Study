@@ -1,14 +1,14 @@
 # Table of contents
 * [Reference](#Reference)
-* [Java Collection](#Java Collection)
+* [Java Collection](#Java_Collection)
 * [Array](#Array)
-* [String & Character](#String & Character)
+* [String & Character](#String_Character)
 	* [StringBuffer](#StringBuffer)
-* [Linked List](#Linked List)
+* [Linked List](#Linked_List)
 * [Stack](#Stack)
 * [Queue](#Queue)
 * [Tree](#Tree)
-	* [Binary Tree Traversal](#Binary Tree Traversal)
+	* [Binary Tree Traversal](#Binary_Tree_Traversal)
 * [Graphs](#Graphs)
 
 
@@ -21,7 +21,7 @@
 	https://pdfs.semanticscholar.org/2d4a/a0f63c26dee36310c6c1ce3fe1fe4b4551e9.pdf
 	https://www.geeksforgeeks.org/data-structures/
 	
-# Java Collection <a name="Java Collection"></a>
+# Java Collection <a name="Java_Collection"></a>
 ------
 Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 ## Collection 
@@ -42,7 +42,8 @@ Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 	  |-----------HashMap-----Linked HashMap
 ```
 
-## Collection/Map just interface. The interal data structure to implement them is Array/Tree/Linked List
+## Collection/Map interfaces
+The interal data structure to implement them is Array/Tree/Linked List
 ```
 	Collection:
 		int size()
@@ -115,7 +116,7 @@ Array in java is fixed length. ArrayList is resizable (An ArrayList can resize i
 
 Array
 
-# String & Character <a name="String & Character"></a>
+# String & Character <a name="String_Character"></a>
 ---
 String have following high frequency methods
 - Character.isDigit(x)
@@ -138,7 +139,7 @@ StringBuffer is a resizable array. Can be used to avoid high operation drawback 
 
 # Vector vs. ArrayList
 ---
-# Linked List <a name="Linked List"></a>
+# Linked List <a name="Linked_List"></a>
 ---
 Linked List have Singly Linked List
 ```
@@ -198,7 +199,7 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - Full binary Tree: each node have zero or 2 children, NO node will have 1 child
 - Perfect binary tree: full and complete
 
-## Binary Tree Traversal <a name="Binary Tree Traversal"></a>
+## Binary Tree Traversal <a name="Binary_Tree_Traversal"></a>
 - preorder, inorder, post-order
 - inorder more often
 - Can be implemented By dfs, bfs
