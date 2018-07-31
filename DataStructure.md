@@ -6,9 +6,15 @@
 	* [StringBuffer](#StringBuffer)
 * [Linked List](#Linked_List)
 * [Stack](#Stack)
+	* [Stack Usage](#stack_usage)
+	* [Monotonous stack](#monotonous_stack)
 * [Queue](#Queue)
 * [Tree](#Tree)
 	* [Binary Tree Traversal](#Binary_Tree_Traversal)
+		* [Inorder Traversal](#Inorder_Traversal)
+		* [Preorder Traversal](#Preorder_Traversal)
+		* [Post order Traversal](#Postorder_Traversal)
+	* [Convert DFS to while loop by Stack](#dfs_to_loop_by_stack)
 * [Graphs](#Graphs)
 
 
@@ -114,7 +120,12 @@ Array have following frequently used methods
 ```
 Array in java is fixed length. ArrayList is resizable (An ArrayList can resize itself as needed)
 
-Array
+## High rate operation
+- Reverse
+- Binary Search
+- Rotate
+- Find Dup
+- Palindrome
 
 # String & Character <a name="String_Character"></a>
 ---
@@ -131,11 +142,11 @@ String have following high frequency methods
 - char[] rst = String.toCharArray()
 - String.trim()
 
-Questions: palindrome/permutation/unified
-
 ## StringBuffer
 ----
 StringBuffer is a resizable array. Can be used to avoid high operation drawback of String when you add other strings.
+## High rate operation
+- palindrome/permutation/unified
 
 # Vector vs. ArrayList
 ---
@@ -165,12 +176,15 @@ Iteration Linked List, sometimes will can use recursive/runner pointer
 ---
 - peek(), pop(), push(), isEmpty()
 - Stack<Object> stack = new Stack<>(); Push generic Object to stack
-## Stack Usage
+	
+## Stack Usage <a name="stack_usage"></a>
 - Reverse Stack
 - stack, change recursive to no recursive
 - Stack can be implemented with LinkedList, adding/removing from same side of the list
+- Use Stack implement Queue
+- Use Stack for sort
 
-## Monotonous stack
+## Monotonous stack <a name="monotonous_stack"></a>
 ---
 Monotonous stack template:
 ```
@@ -204,8 +218,37 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - inorder more often
 - Can be implemented By dfs, bfs
 
-### Inorder Traversal <a name="Inorder Traversal"></a>
-- DFS: check leaf => dfs left => process root => dfs right
+### Inorder Traversal <a name="Inorder_Traversal"></a>
+```
+void inOrderTraversal(TreeNode node) {
+    if(node!=null) {
+        inOrderTraversal(node.left);
+	visit(node);
+	inOrderTraversal(node.right);
+    }
+}
+```
+### Preorder Traversal <a name="Preorder_Traversal"></a>
+```
+void preOrderTraversal(TreeNode node) {
+    if(node!=null) {
+        visit(node);
+        preOrderTraversal(node.left);
+	preOrderTraversal(node.right);
+    }
+}
+```
+### Post order Traversal <a name="Postorder_Traversal"></a>
+```
+void postOrderTraversal(TreeNode node) {
+    if(node!=null) {
+        postOrderTraversal(node.left);
+	postOrderTraversal(node.right);
+	visit(node);
+    }
+}
+```
+### Convert DFS to while loop by Stack  <a name="dfs_to_loop_by_stack"></a>
 - stack: in while loop: deep dive to left leaf => stack.pop() => `node = node.right`
 ```
 	stack.push(root);
@@ -246,10 +289,14 @@ The expression tree will be like
                    [ 23 ][ 7 ] [ 1 ]   [ 2 ] .
 
 ```
+## Heap
+Heap Property (Min/Max Heap)
+
 ## Tries
 ---
-- Prefix Tree
-- n-ary tree
+- Another name: Prefix Tree
+- A variant of n-ary tree in which characters are stored at each node. Each path down the tree may represent a word.
+- * node is often used to indicate complete words.
 - Can tell if string is a valid prefix in O(K) time, k = str.length
 
 ## Segment Tree
@@ -285,6 +332,7 @@ In the website there are many implementation
 https://algs4.cs.princeton.edu/41graph/Graph.java.html
 
 Here prefer following (Copied from Geekforgeeks)
+## Define Graph
 ```
 // A class to represent a graph edge
 class Edge implements Comparable<Edge>
@@ -448,6 +496,10 @@ public class Graph {
         }
         return s.toString();
     }
+}
+```
+## DFS
+```
     /*
       void DFS(G) {
         for each vertex u in G.V
@@ -493,7 +545,10 @@ public class Graph {
        // Call the recursive helper function to print DFS traversal
        DFSVisit(v, visited);
    }
-   
+```
+
+## BFS
+```
    /*
    public void BFS(Graph G, Vertex s) {
         for each vertex u in G.V - {s}
@@ -550,42 +605,9 @@ public class Graph {
            }
        }
    }
-
-   // A utility function to find set of an element i
-   // (uses path compression technique)
-   int find(subset subsets[], int i)
-   {
-       // find root and make root as parent of i (path compression)
-       if (subsets[i].parent != i)
-           subsets[i].parent = find(subsets, subsets[i].parent);
-
-       return subsets[i].parent;
-   }
-
-   // A function that does union of two sets of x and y
-   // (uses union by rank)
-   void Union(subset subsets[], int x, int y)
-   {
-       int xroot = find(subsets, x);
-       int yroot = find(subsets, y);
-
-       // Attach smaller rank tree under root of high rank tree
-       // (Union by Rank)
-       if (subsets[xroot].rank < subsets[yroot].rank)
-           subsets[xroot].parent = yroot;
-       else if (subsets[xroot].rank > subsets[yroot].rank)
-           subsets[yroot].parent = xroot;
-
-       // If ranks are same, then make one as root and increment
-       // its rank by one
-       else
-       {
-           subsets[yroot].parent = xroot;
-           subsets[xroot].rank++;
-       }
-   }
-   
-   
+```
+## Topological Sort
+```
    /**
     * ========================= 	
        TOPOLOGICAL-SORT(G)
@@ -634,6 +656,10 @@ public class Graph {
        while (stack.empty()==false)
            System.out.print(stack.pop() + " ");
    }
+```
+## PRIM MST
+```
+
    /**
     * BFS, get adjusted vertex which have the minium edge value. Result is the vertex & parent
     * 	==============
@@ -720,6 +746,44 @@ public class Graph {
        // print the constructed MST
        printMST(parent, V, graph);
    }
+```
+## MST-KRUSKAL
+```
+   // A utility function to find set of an element i
+   // (uses path compression technique)
+   int find(subset subsets[], int i)
+   {
+       // find root and make root as parent of i (path compression)
+       if (subsets[i].parent != i)
+           subsets[i].parent = find(subsets, subsets[i].parent);
+
+       return subsets[i].parent;
+   }
+
+   // A function that does union of two sets of x and y
+   // (uses union by rank)
+   void Union(subset subsets[], int x, int y)
+   {
+       int xroot = find(subsets, x);
+       int yroot = find(subsets, y);
+
+       // Attach smaller rank tree under root of high rank tree
+       // (Union by Rank)
+       if (subsets[xroot].rank < subsets[yroot].rank)
+           subsets[xroot].parent = yroot;
+       else if (subsets[xroot].rank > subsets[yroot].rank)
+           subsets[yroot].parent = xroot;
+
+       // If ranks are same, then make one as root and increment
+       // its rank by one
+       else
+       {
+           subsets[yroot].parent = xroot;
+           subsets[xroot].rank++;
+       }
+   }
+   
+
    /**
     * Find and Union. Choice min edge then find/Union until all vertex processed.
     * If two end of the edge isn't in the UNION side, then UNION it.
@@ -795,7 +859,9 @@ public class Graph {
                   result[i].dest+" == " + result[i].weight);
    }
    
-   
+ ```
+ ## Dijkstra
+ ```
    /**
     * DIJKSTRA(G,w,s) find short path
        INITIALIZE-SINGLE-SOURCE(G, s)
