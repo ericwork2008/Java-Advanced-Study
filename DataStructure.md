@@ -1,15 +1,15 @@
 # Table of contents
-[Reference](#Reference)
-[Java Collection](#Java Collection)
-[Array](#Array)
-[String & Character](#String & Character)
-	[StringBuffer](#StringBuffer)
-[Linked List](#Linked List)
-[Stack](#Stack)
-[Queue](#Queue)
-[Tree](#Tree)
-	[Binary Tree Traversal](#Binary Tree Traversal)
-[Graphs](#Graphs)
+* [Reference](#Reference)
+* [Java Collection](#Java Collection)
+* [Array](#Array)
+* [String & Character](#String & Character)
+	* [StringBuffer](#StringBuffer)
+* [Linked List](#Linked List)
+* [Stack](#Stack)
+* [Queue](#Queue)
+* [Tree](#Tree)
+	* [Binary Tree Traversal](#Binary Tree Traversal)
+* [Graphs](#Graphs)
 
 
 Reference:	
