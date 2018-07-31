@@ -1,18 +1,18 @@
 # Table of contents
-1. [Reference](#Reference)
-2. [Java Collection](#Java Collection)
-3. [Array](#Array)
-4. [String & Character](#String & Character)
-	1. [StringBuffer](#StringBuffer)
-5. [Linked List](#Linked List)
-6. [Stack](#Stack)
-7. [Queue](#Queue)
-8. [Tree](#Tree)
-	1. [Binary Tree Traversal](#Binary Tree Traversal)
-9. [Graphs](#Graphs)
+[Reference](#Reference)
+[Java Collection](#Java Collection)
+[Array](#Array)
+[String & Character](#String & Character)
+	[StringBuffer](#StringBuffer)
+[Linked List](#Linked List)
+[Stack](#Stack)
+[Queue](#Queue)
+[Tree](#Tree)
+	[Binary Tree Traversal](#Binary Tree Traversal)
+[Graphs](#Graphs)
 
 
-#Reference:	
+Reference:	
 ---
 	https://hk029.gitbooks.io/leetbook/
 	https://javarevisited.blogspot.com/2013/03/top-15-data-structures-algorithm-interview-questions-answers-java-programming.html
@@ -21,7 +21,7 @@
 	https://pdfs.semanticscholar.org/2d4a/a0f63c26dee36310c6c1ce3fe1fe4b4551e9.pdf
 	https://www.geeksforgeeks.org/data-structures/
 	
-#Java Collection <a name="Java Collection"></a>
+Java Collection <a name="Java Collection"></a>
 ------
 Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 ##Collection 
@@ -96,8 +96,9 @@ Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 	Converting a List to an Array - toArray()
 	Using an Array as a List - Arrays.asList()
 	Java Collections.binarySearch
-#Array <a name="Array"></a>
-  ---
+
+Array <a name="Array"></a>
+---
 Array have following frequently used methods
 ```
 - Partial sort: Arrays.sort(arr, 0, arr.length())
@@ -114,7 +115,8 @@ Array in java is fixed length. ArrayList is resizable (An ArrayList can resize i
 
 Array
 
-# String & Character <a name="String & Character"></a>
+String & Character <a name="String & Character"></a>
+---
 String have following high frequency methods
 - Character.isDigit(x)
 - Character.getNumericValue();
@@ -130,13 +132,13 @@ String have following high frequency methods
 
 Questions: palindrome/permutation/unified
 
-#StringBuffer
+StringBuffer
 ----
 StringBuffer is a resizable array. Can be used to avoid high operation drawback of String when you add other strings.
 
-#Vector vs. ArrayList
+Vector vs. ArrayList
 ---
-# Linked List <a name="Linked List"></a>
+Linked List <a name="Linked List"></a>
 ---
 Linked List have Singly Linked List
 ```
@@ -158,7 +160,7 @@ class Node{
 }
 ```
 Iteration Linked List, sometimes will can use recursive/runner pointer
-# Stack <a name="Stack"></a>
+Stack <a name="Stack"></a>
 ---
 - peek(), pop(), push(), isEmpty()
 - Stack<Object> stack = new Stack<>(); Push generic Object to stack
@@ -179,14 +181,14 @@ while (!stack.isEmpty() && (item.property compareTo stack.peek().property)) {
 stack.push(item);
 ```
 
-#Queue <a name="Queue"></a>
+Queue <a name="Queue"></a>
 ---
 - add(),remove(), peek(), isEmpty(). For Java Queue Class, please refer to the #Java Collection
 - queue = new LinkedList<...>() Queue can use LinkedList. Add from the last/end of the list; Return/remove from the head of the list. 
 - PriorityQueue: new Comparator
 - PriorityQueue
 
-#Tree <a name="Tree"></a>
+Tree <a name="Tree"></a>
 ---
 A simple version of graph which haven't cycle, and each node can have a list of children
 - Binary Tree:  each node has up to  two chidren
@@ -196,12 +198,12 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - Full binary Tree: each node have zero or 2 children, NO node will have 1 child
 - Perfect binary tree: full and complete
 
-## Binary Tree Traversal <a name="Binary Tree Traversal"></a>
+# Binary Tree Traversal <a name="Binary Tree Traversal"></a>
 - preorder, inorder, post-order
 - inorder more often
 - Can be implemented By dfs, bfs
 
-### Inorder Traversal <a name="Inorder Traversal"></a>
+## Inorder Traversal <a name="Inorder Traversal"></a>
 - DFS: check leaf => dfs left => process root => dfs right
 - stack: in while loop: deep dive to left leaf => stack.pop() => `node = node.right`
 ```
@@ -226,7 +228,7 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - `node = node.right` is critical, otherwise it'll be in infinite loop
 - alternatively: we could set left = null, but that's disruptive to original structure, not recommended.
 
-##Expression Tree
+#Expression Tree
 ---
 ```
 Example
@@ -243,36 +245,36 @@ The expression tree will be like
                    [ 23 ][ 7 ] [ 1 ]   [ 2 ] .
 
 ```
-##Tries
+#Tries
 ---
 - Prefix Tree
 - n-ary tree
 - Can tell if string is a valid prefix in O(K) time, k = str.length
 
-## Segment Tree
+# Segment Tree
 - Another name: Interval Tree. 
 - https://en.wikipedia.org/wiki/Segment_tree
 - https://en.wikipedia.org/wiki/Interval_tree
 - https://www.geeksforgeeks.org/interval-tree/
 
-## Red Black Tree
+# Red Black Tree
 - one kind of self-balancing binary search tree
 - Each node of the binary tree has an extra bit, and that bit is often interpreted as the color (red or black) of the node
 - search O(logn), n = total # of nodes in the tree
 - deletion/insertion/tree rearrangement && coloring: O(logn)
 
-## B-Tree
+# B-Tree
 - https://en.wikipedia.org/wiki/B-tree
 
-## AVL Tree
+# AVL Tree
 - The sub-trees of every node differ in height by at most one.
 - Every sub-tree is an AVL tree
 
-### Usage
+## Usage
 - Storage system than read/write large blocks of data.
 - Commonly used in database, filesystem
 
-#Graphs
+Graphs
 ---
 Representation method
 - Adjacency Matrix
