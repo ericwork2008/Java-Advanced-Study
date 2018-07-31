@@ -322,7 +322,7 @@ Heap Property (Min/Max Heap)
 - Storage system than read/write large blocks of data.
 - Commonly used in database, filesystem
 
-# Graphs
+# Graphs <a name="graphs"></a>
 ---
 Representation method
 - Adjacency Matrix
@@ -332,7 +332,7 @@ In the website there are many implementation
 https://algs4.cs.princeton.edu/41graph/Graph.java.html
 
 Here prefer following (Copied from Geekforgeeks)
-## Define Graph
+## Define Graph <a name="graphs_definition"></a>
 ```
 // A class to represent a graph edge
 class Edge implements Comparable<Edge>
@@ -498,7 +498,7 @@ public class Graph {
     }
 }
 ```
-## DFS
+## DFS <a name="dfs"></a>
 ```
     /*
       void DFS(G) {
@@ -547,7 +547,7 @@ public class Graph {
    }
 ```
 
-## BFS
+## BFS <a name="bfs"></a>
 ```
    /*
    public void BFS(Graph G, Vertex s) {
@@ -606,7 +606,7 @@ public class Graph {
        }
    }
 ```
-## Topological Sort
+## Topological Sort <a name="Topological_sort"></a>
 ```
    /**
     * ========================= 	
@@ -657,7 +657,7 @@ public class Graph {
            System.out.print(stack.pop() + " ");
    }
 ```
-## PRIM MST
+## PRIM MST  <a name="prim"></a>
 ```
 
    /**
@@ -747,7 +747,7 @@ public class Graph {
        printMST(parent, V, graph);
    }
 ```
-## MST-KRUSKAL
+## MST-KRUSKAL <a name="kruskal"></a>
 ```
    // A utility function to find set of an element i
    // (uses path compression technique)
@@ -860,7 +860,7 @@ public class Graph {
    }
    
  ```
- ## Dijkstra
+ ## Dijkstra <a name="dijkstra"></a>
  ```
    /**
     * DIJKSTRA(G,w,s) find short path
