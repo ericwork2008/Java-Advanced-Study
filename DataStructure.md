@@ -21,7 +21,7 @@
 	https://pdfs.semanticscholar.org/2d4a/a0f63c26dee36310c6c1ce3fe1fe4b4551e9.pdf
 	https://www.geeksforgeeks.org/data-structures/
 	
-#Java Collection
+#Java Collection <a name="Java Collection"></a>
 ------
 Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 ##Collection 
@@ -96,7 +96,7 @@ Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 	Converting a List to an Array - toArray()
 	Using an Array as a List - Arrays.asList()
 	Java Collections.binarySearch
-#Array
+#Array <a name="Array"></a>
   ---
 Array have following frequently used methods
 ```
@@ -114,7 +114,7 @@ Array in java is fixed length. ArrayList is resizable (An ArrayList can resize i
 
 Array
 
-# String & Character
+# String & Character <a name="String & Character"></a>
 String have following high frequency methods
 - Character.isDigit(x)
 - Character.getNumericValue();
@@ -136,7 +136,7 @@ StringBuffer is a resizable array. Can be used to avoid high operation drawback 
 
 #Vector vs. ArrayList
 ---
-# Linked List
+# Linked List <a name="Linked List"></a>
 ---
 Linked List have Singly Linked List
 ```
@@ -158,7 +158,7 @@ class Node{
 }
 ```
 Iteration Linked List, sometimes will can use recursive/runner pointer
-# Stack
+# Stack <a name="Stack"></a>
 ---
 - peek(), pop(), push(), isEmpty()
 - Stack<Object> stack = new Stack<>(); Push generic Object to stack
@@ -179,14 +179,14 @@ while (!stack.isEmpty() && (item.property compareTo stack.peek().property)) {
 stack.push(item);
 ```
 
-#Queue
+#Queue <a name="Queue"></a>
 ---
 - add(),remove(), peek(), isEmpty(). For Java Queue Class, please refer to the #Java Collection
 - queue = new LinkedList<...>() Queue can use LinkedList. Add from the last/end of the list; Return/remove from the head of the list. 
 - PriorityQueue: new Comparator
 - PriorityQueue
 
-#Tree
+#Tree <a name="Tree"></a>
 ---
 A simple version of graph which haven't cycle, and each node can have a list of children
 - Binary Tree:  each node has up to  two chidren
@@ -196,12 +196,12 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - Full binary Tree: each node have zero or 2 children, NO node will have 1 child
 - Perfect binary tree: full and complete
 
-## Binary Tree Traversal
+## Binary Tree Traversal <a name="Binary Tree Traversal"></a>
 - preorder, inorder, post-order
 - inorder more often
 - Can be implemented By dfs, bfs
 
-### Inorder Traversal
+### Inorder Traversal <a name="Inorder Traversal"></a>
 - DFS: check leaf => dfs left => process root => dfs right
 - stack: in while loop: deep dive to left leaf => stack.pop() => `node = node.right`
 ```
