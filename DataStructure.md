@@ -1,3 +1,17 @@
+# Table of contents
+1. [Reference](#Reference)
+2. [Java Collection](#Java Collection)
+3. [Array](#Array)
+4. [String & Character](#String & Character)
+	1. [StringBuffer](#StringBuffer)
+5. [Linked List](#Linked List)
+6. [Stack](#Stack)
+7. [Queue](#Queue)
+8. [Tree](#Tree)
+	1. [Binary Tree Traversal](#Binary Tree Traversal)
+9. [Graphs](#Graphs)
+
+
 #Reference:	
 ---
 	https://hk029.gitbooks.io/leetbook/
