@@ -931,3 +931,9 @@ public class Graph {
    }
 }
 ```
+
+# Bit Manipulation
+- -k = concat(1, 2^(n-1) - k)
+- Arithmetic(>>) & Logical(>>>) Shift
+
+Refer [awesome-bits](https://github.com/keon/awesome-bits).
