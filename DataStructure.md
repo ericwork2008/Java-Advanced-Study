@@ -530,14 +530,15 @@ public class Graph {
        }
      */
    // A function used by DFS
-   void DFSVisit(int v,boolean visited[]) {
+   void DFSVisit(int v,boolean visited[]) {  				//Passed extra data to record visit state/path/depth
        // Mark the current node as visited and print it
-       visited[v] = true;
+       visited[v] = true;						//Visit present node, if we want have special function
+       									//to precess
        System.out.print(v+" ");
 
        // Recur for all the vertices adjacent to this vertex
        Iterator<Integer> i = adj[v].listIterator();
-       while (i.hasNext()) {
+       while (i.hasNext()) { //Termination
            int n = i.next();
            if (!visited[n])
                DFSVisit(n, visited);
@@ -568,7 +569,7 @@ public class Graph {
         s.p = NIL
         create empty Q 
         ENQUEUE(Q, s)
-        while Q != empty
+        while Q != empty  //Termination
         	u = DEQUEUE(Q)
         	for each v in G.Adj[u]
         		if v.visited == false
@@ -585,13 +586,14 @@ public class Graph {
        boolean visited[] = new boolean[V];
 
        // Create a queue for BFS. FIFO queue
-       LinkedList<Integer> queue = new LinkedList<Integer>();
+       LinkedList<Integer> queue = new LinkedList<Integer>();		//Queue, multiple queue for special case
 
        // Mark the current node as visited and enqueue it
-       visited[s]=true;
+       visited[s]=true;							//Visted node process, BFS can add extra info in node. 
+       									//No call stack
        queue.add(s);
 
-       while (queue.size() != 0)
+       while (queue.size() != 0)					//If we have multiple queue, we need check the current queue
        {
            // Dequeue a vertex from queue and print it
            s = queue.poll();
@@ -933,7 +935,18 @@ public class Graph {
 ```
 
 # Bit Manipulation
-- -k = concat(1, 2^(n-1) - k)
+- 32 bit number: leading bit = 1, negative numbjer; leading bit = 0, positive number.
+-- -k = concat(1, 2^(n-1) - k)
 - Arithmetic(>>) & Logical(>>>) Shift
-
+-- '>>' add leading '1' if the 32 bit number originally has leading '1'.
+-- Java/python: logical shift >>>, always add leading '0' regardless of the sign of the 32-bit number. That is, it may turn a negative number to positive, if the leading bit is originally '1'
+- Bit OR |, AND &, XOR ^
+- Bit shift: <<, >>
+- A << 1: value x 2
+- A >> 1: divide by integer 2
+- & 0000 = clean up; 
+- A^B=C, then A = B^C
+- Math.pow(2, h) = 2 << (h - 1); 
+- Also, 1 << h = 2 ^ h;
+- bit operation should be in parentheses
 Refer [awesome-bits](https://github.com/keon/awesome-bits).
