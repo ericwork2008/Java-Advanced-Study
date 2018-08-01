@@ -63,14 +63,14 @@ In Crack Coding, it have following way to design an algorithm
 
 ## Pseudo Code of Moving Through an Array (this is why iteration is used for this)
 ```
-	Recursion                         | Iteration
-	----------------------------------|----------------------------------
+	Recursion                         :|: Iteration
+	----------------------------------:|:----------------------------------
 	recursive method (array, n)       | iterative method (array)
-		if array[n] is not nil          |   for n from 0 to size of array
-			print array[n]                |     print(array[n])
+		if array[n] is not nil    |   for n from 0 to size of array
+			print array[n]    |     print(array[n])
 	    	recursive method(array, n+1)|
-		else                            |
-			exit loop                     |
+		else                      |
+			exit loop         |
 ```    
 
 # The steps to choice right traversal tech.
@@ -82,6 +82,7 @@ In Traversal, we are tring to find/modify/etc. other operations on DATA. Just li
 - Global Variables (on HEAP)
 - Return Data.
 
+# Some popular Traversal tech
 ### Two Pointers
 - Two pointers in array
 - Two pointers in Linked List
