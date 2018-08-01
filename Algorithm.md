@@ -1,4 +1,12 @@
-# Big O (for Time and Space complexity)
+# Table of contents
+* [Big O](#bigo)
+** [Amotized Time](#amotize_time)
+* [Steps for Solution](#solution_steps)
+** [How to design&develope an algorithm] (#dev_algo)
+* [Traversal techinics] (#traversal_tech)
+
+
+# Big O (for Time and Space complexity) <a name="bigo"></a>
 ---
 Big O is an upper bound on time
 Big omega is the lower bound
@@ -8,7 +16,7 @@ Normally we think about three case for Big O analysis: best/worse/Excepted
 
 Recursive function that makes multiple calls, the runtime will often look like O(branch^depth)
 
-## Amotized Time 
+## Amotized Time <a name="amotize_time"></a>
 ---
 [wiki link](https://en.wikipedia.org/wiki/Amortized_analysis)
 
@@ -17,12 +25,12 @@ Recursive function that makes multiple calls, the runtime will often look like O
 ---
 - permutation factorial 
 
-# Steps for a Solution
+# Steps for a Solution <a name="solution_steps"></a>
 	 1) Analysis Problem, find solution way. Get the special properties in the solution.
 	 2) Find & Simplify to a reasonable Math Model (Data Structure & Algorithm)
 	 3) Write the data structure and algorithm by code.
 	 4) Test
-## How to design&develope an algorithm
+## How to design&develope an algorithm <a name="dev_algo"></a>
 ---
 In Crack Coding, it have following way to design an algorithm
 1) Look for BUD (Bottleneck, Unneccecary Operation, Duplicated Operations)
@@ -33,8 +41,8 @@ In Crack Coding, it have following way to design an algorithm
 6) Check if we used all information we know.
 
 
-# Traversal techinics
-## Recursive Algorithms 
+# Traversal techinics <a name="traversal_tech"></a>
+## Recursive Algorithms  <a name="recursive_algo"></a>
 	An algorithm that calls itself in its definition.
 	
 	Recursive case a conditional statement that is used to trigger the recursion.
@@ -49,12 +57,12 @@ In Crack Coding, it have following way to design an algorithm
 	Knowing whether or not you will reach a base case is integral to correctly using recursion.
 	Often used in Depth First Search
 
-## Iterative Algorithms (iteration as loops, for, while)
+## Iterative Algorithms (iteration as loops, for, while) <a name="iter_algo"></a>
 	An algorithm that is called repeatedly but for a finite number of times,
 	each time being a single iteration. Often used to move incrementally through a data set.
 
 
-## Recursion Vs. Iteration
+## Recursion Vs. Iteration <a name="recuVsiter"></a>
 	Recursion is, usually, more expressive and easier to implement.
 	Iteration uses less memory.
 	Functional languages tend to use recursion. (i.e. Haskell)
@@ -73,17 +81,17 @@ In Crack Coding, it have following way to design an algorithm
 			exit loop         |
 ```    
 
-# The steps to choice right traversal tech.
+# The steps to choice right traversal tech. <a name="choice_traversal"></a>
 1) Investigate some samples to figure out the steps to find the solution
 2) refine the steps to traversal tech. and convert it to computation logic.
-## Data Process
+## Data Process <a name="data_process"></a>
 In Traversal, we are tring to find/modify/etc. other operations on DATA. Just like normal function call we have following three way to access data
 - Passed Parameters (on Stack)
 - Global Variables (on HEAP)
 - Return Data.
 
-# Some popular Traversal tech
-### Two Pointers
+# Some popular Traversal tech <a name="traversalTech"></a>
+## Two Pointers <a name="two_pointers"></a>
 - Two pointers in array
 - Two pointers in Linked List
 '''
@@ -94,7 +102,7 @@ In Traversal, we are tring to find/modify/etc. other operations on DATA. Just li
   	}
 '''
 
-### Binary Search
+## Binary Search <a name="bin_search"></a>
 - Different point have different purpose.
 - The iterator have clear definition. for loop / do-while /while-do / recursive will iterate in
 --	the range of condition!
@@ -114,9 +122,9 @@ In Traversal, we are tring to find/modify/etc. other operations on DATA. Just li
 	return st;
 '''
 
-### In Place swap
+## In Place swap
 ---
-### Linked List traversal
+## Linked List traversal <a name="traversal_linkedlist"></a>
 ---
  	Two Point in Linked List Need have header & tail two variables
 	Note: In the iteration, we need make sure 
@@ -124,7 +132,7 @@ In Traversal, we are tring to find/modify/etc. other operations on DATA. Just li
 		2) after loop, front>=tail
 
 
-### Sentinel Usage
+## Sentinel Usage <a name="sentinel"></a>
 In traversal, sometimes to make sure we have a uniform code to avoid boundary check we can use Sentinel
 ### Array sentinel
 	two array compairation
@@ -147,7 +155,7 @@ Traversal, we need care about the edge.
 1) List Edge condition and test it
 2) What is the Traversal variable, how to use it?
 
-### Breadth First Search
+## Breadth First Search <a name="bfs"></a>
 ---
 	An algorithm that searches a tree (or graph) by searching levels of the tree first, starting at the root.
 	It finds every node on the same level, most often moving left to right.
@@ -166,7 +174,7 @@ Traversal, we need care about the edge.
 	E is number of edges
 	V is number of vertices
 
-### Depth First Search 
+### Depth First Search <a name="dfs"></a>
 	An algorithm that searches a tree (or graph) by searching depth of the tree first, starting at the root.
 	It traverses left down a tree until it cannot go further.
 	Once it reaches the end of a branch it traverses back up trying the right child of nodes on that branch,
@@ -185,7 +193,7 @@ Traversal, we need care about the edge.
 	E is number of edges
 	V is number of vertices
 
-### Breadth First Search Vs. Depth First Search
+### Breadth First Search Vs. Depth First Search <a name="bfsVsdfs"></a>
 	The simple answer to this question is that it depends on the size and shape of the tree.
 	For wide, shallow trees use Breadth First Search
 	For deep, narrow trees use Depth First Search
