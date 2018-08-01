@@ -73,10 +73,14 @@ In Crack Coding, it have following way to design an algorithm
 			exit loop                     |
 ```    
 
-## The steps to choice right traversal tech.
+# The steps to choice right traversal tech.
 1) Investigate some samples to figure out the steps to find the solution
 2) refine the steps to traversal tech. and convert it to computation logic.
-
+## Data Process
+In Traversal, we are tring to find/modify/etc. other operations on DATA. Just like normal function call we have following three way to access data
+- Passed Parameters (on Stack)
+- Global Variables (on HEAP)
+- Return Data.
 
 ### Two Pointers
 - Two pointers in array
