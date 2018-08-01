@@ -2,8 +2,20 @@
 * [Big O](#bigo)
 ** [Amotized Time](#amotize_time)
 * [Steps for Solution](#solution_steps)
-** [How to design&develope an algorithm] (#dev_algo)
-* [Traversal techinics] (#traversal_tech)
+** [How to design&develope an algorithm](#dev_algo)
+* [Traversal techinics](#traversal_tech)
+** [Recursive Algorithms](#recursive_algo)
+** [Iterative Algorithms](#iter_algo)
+** [Recursion Vs. Iteration](#recuVsiter)
+* [The steps to choice right traversal tech](#choice_traversal)
+** [Data Process](#data_process)
+* [Popular Traversal tech](#traversalTech)
+** [Binary Search](#bin_search)
+** [Linked List traversal](#traversal_linkedlist)
+** [Sentinel Usage](#sentinel)
+** [Breadth First Search](#bfs)
+** [Depth First Search](#dfs)
+
 
 
 # Big O (for Time and Space complexity) <a name="bigo"></a>
