@@ -102,8 +102,8 @@ In Traversal, we are tring to find/modify/etc. other operations on DATA. Just li
 - Global Variables (on HEAP)
 - Return Data.
 - In algrithm implementation code, the headache thing is how to handle the data, the following is the idea
--- List all input&output data;
--- Organize the data in with a data structure, in an existing class/array/etc. field or have new class/array/etc. to hold the data.
+	-- List all input&output data;
+	-- Organize the data in with a data structure, in an existing class/array/etc. field or have new class/array/etc. to hold the data.
 
 # Some popular Traversal tech <a name="traversalTech"></a>
 ## Two Pointers <a name="two_pointers"></a>
