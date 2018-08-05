@@ -8,6 +8,7 @@ Step 2: Abstract design, core system class and overview arch
 	 try to address every constraint and use case.
 	 
 Step 3: Understanding bottlenecks Or Issues
+
 Step 4: Scaling your abstract design/Close issues
 
 ## System design need think about following aspects
