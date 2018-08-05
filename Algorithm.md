@@ -214,3 +214,6 @@ Traversal, we need care about the edge.
 	For deep, narrow trees use Depth First Search
 	Breadth First Search tends to be a looping algorithm.
 	Depth First Search tends to be a recursive algorithm.
+	
+### DFS recursion techinic
+	- Sometimes when we traveral in an list which may have several dementions. The List can be sorted by one demention, when we decide go to next level recursion, we can use come valid check to make sure next recursion can meet some other dementions' requirement.
