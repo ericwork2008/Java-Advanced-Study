@@ -674,15 +674,15 @@ public class Graph {
     * 	==============
        MST-PRIM(G,w,r)   O(E + V lgV)
            for each u in G.V
-               u.key = MAX							//Set every key=MAX
+               u.key = MAX						//Set every key=MAX
                u.p = NIL	
-           r.key = 0
-           Q = G.V									//Q have all vertex
+           r.key = 0							//Root is the first node.
+           Q = G.V							//Q have all vertex
            while Q != empty
                u = EXTRACT-MIN(Q)					//Get the min key value vertex
                for each v in G.Adj[u]
-                   if v in Q and w(u,v)< v.key     //Reduce v.key
-                       v.p = u
+                   if v in Q and w(u,v)< v.key     			//Reduce v.key
+                       v.p = u						//Every V get update for p, V.p will have all MST result
                        v.key = w(u,v)
     */
    // A utility function to find the vertex with minimum key
@@ -802,10 +802,10 @@ public class Graph {
            A = empty
            for each vertex v in G.V
                MAKE-SET(v)
-           sort the edges of G.E into nondecreasing order by weight w
-           for each edge (u,v) in G.E, taken in nondecreasing order by weight
+           sort the edges of G.E into nondecreasing order by weight w		//Sort edges
+           for each edge (u,v) in G.E, taken in nondecreasing order by weight	//find-union
                if FIND-SET(u) != FIND-SET(v)
-               A = A U {(u,v)}
+               A = A U {(u,v)}							//A is the MST result, it hold the MST edges
         		UNION(u,v)
            return A
     */
@@ -875,11 +875,11 @@ public class Graph {
     * DIJKSTRA(G,w,s) find short path
        INITIALIZE-SINGLE-SOURCE(G, s)
            S = empty
-           Q = G.V							//All vertex in the Queue
+           Q = G.V					//All vertex in the Queue
            while Q != empty
                u = EXTRACT-MIN(Q)			//u is visited here
-               S = S U {u}
-               for each vertex in G.Adj[u]	//Need by pass visited vertex
+               S = S U {u}				//S hold all V which already have the short path
+               for each vertex in G.Adj[u]		//Need by pass visited vertex
                    RELAX(u,v,w)
     */
    // Funtion that implements Dijkstra's single source shortest path
