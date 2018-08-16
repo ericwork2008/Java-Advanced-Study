@@ -97,7 +97,12 @@ In Crack Coding, it have following way to design an algorithm
 1) Investigate some samples to figure out the steps to find the solution
 2) refine the steps to traversal tech. and convert it to computation logic.
 ## Data Process <a name="data_process"></a>
-In Traversal, we are tring to find/modify/etc. other operations on DATA. Just like normal function call we have following three way to access data
+In Traversal, we are tring to find/modify/etc. other operations on DATA. Another we also need record for result.
+We have following ways to list all required variable.
+-- Trace Table
+-- Visualise call/return chain
+
+Just like normal function call we have following three way to access data
 - Passed Parameters (on Stack)
 - Global Variables (on HEAP)
 - Return Data.
