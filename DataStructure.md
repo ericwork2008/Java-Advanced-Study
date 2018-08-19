@@ -950,3 +950,32 @@ public class Graph {
 - Also, 1 << h = 2 ^ h;
 - bit operation should be in parentheses
 Refer [awesome-bits](https://github.com/keon/awesome-bits).
+
+# Compare
+Java provides two interfaces to sort objects using data members of the class: Comparable&Comparator. 
+Comparable interface compares “this” reference with the object specified and Comparator in Java compares two different class objects provided.
+Collections.sort() or Arrays.sort() can be used to sort objects. Default will use Coamparable. Anyway, sort() can pass Comparator too.If sorting of objects needs to be based on natural order then use Comparable whereas if you sorting needs to be done on attributes of different objects, then use Comparator in Java.
+
+- Comparable
+```
+class MyClass implements Comparable<MyClass>
+{
+    // Used to sort movies by year
+    public int compareTo(Movie m)
+    {
+    	//return -1,0,1
+        return -1;
+    }
+}
+```
+- Comparator
+```
+class MyCompare implements Comparator<MyClass>
+{
+    public int compare(MyClass m1, MyClass m2)
+    {
+    	//return -1,0,1
+        return 0;
+    }
+}
+```
