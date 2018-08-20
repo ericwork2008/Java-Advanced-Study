@@ -115,15 +115,18 @@ The interal data structure to implement them is Array/Tree/Linked List
 ---
 Array have following frequently used methods
 ```
+- ArrayList.add(index, elem);
+- Arrays.asList([1,2,3]);
+- Arrays.toString(int[] arr) => string representation: "[1,2,3,4]"
+- Integer[] array = {1, 2, 3};
+- new ArrayList(Arrays.asList(array))
+- list.add(index, object)
+- list.removeRange[x, y)
 - Partial sort: Arrays.sort(arr, 0, arr.length())
 - Copy: Arrays.copyOf(arr, arr.length())
 - target=Arrays.copyOfRange(original,from,to)
-
-- ArrayList.add(index, elem);
-
+- O(1) insertion on average. 
 - 2darray data[][] size is data.length * data[0].length
-- Arrays.asList([1,2,3]);
-- Arrays.toString(int[] arr) => string representation: "[1,2,3,4]"
 ```
 Array in java is fixed length. ArrayList is resizable (An ArrayList can resize itself as needed)
 
@@ -154,6 +157,14 @@ String have following high frequency methods
 StringBuffer is a resizable array. Can be used to avoid high operation drawback of String when you add other strings.
 ## High rate operation
 - palindrome/permutation/unified
+
+# Math
+- Integer.MAX_VALUE, Integer.MIN_VALUE; if overflow, use long
+- Integer.valueOf(number), where number is int
+- Math.pow(x, 3) = x ^ 3; Math.pow(x, 1/3) = x ^ (1/3)
+- Long a = 10; a.intValue() => int
+- Integer: Integer.parseInt("123")
+- Integer.parseInt("010", 2) = 2;
 
 # Vector vs. ArrayList
 ---
