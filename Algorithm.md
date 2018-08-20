@@ -80,6 +80,34 @@ In Crack Coding, it have following way to design an algorithm
 	Functional languages tend to use recursion. (i.e. Haskell)
 	Imperative languages tend to use iteration. (i.e. Ruby)
 	Check out this Stack Overflow post for more info.
+## Traversal Techinics
+Traversal, to process data, we have following condition
+- For result or intermedia data, we may have partial information for cache/memoization
+- Sometimes, one primitive data cannot have enough information. We can defined our Class to hold more than one data field.
+
+Recursion Tree/Combination/Permutation/etc. It depend on the problem. We have following hints
+- Search Space = Know Partial + dfs(remaining)
+- Search Space = Know Partial + Pick/Non-Pick (Present level and next level all have the pick/non-pick)
+- Search Space = DFS(n-1) + Process(n)
+- Search Space = DFS(Left Part) + DFS(Right Part)  (Devide and Conque)
+- Most time, we have mainFunc + helper dfs function.
+- For input have duplicate case, most time we need sort. Avoid duplicate item by "i > index && cand[i] == cand[i - 1]) continue"
+
+Iteration Combination
+- Search Space = Partial + Choice/Non-Choice for each Item
+
+
+### Operation Tech: 
+1) Remaining list
+2) Copy result from List, then create new List + append new element
+
+### Backtracking
+1) Do not change source data.
+2) backtracking: ex: `list.remove(list.size() - 1)`
+
+### Complexity
+- If algorithm each level create x child, If it have n level. Then the node total number is x^n
+- T(n) = x * T(n-1), BigO time will be `O(x^n)`
 
 ## Pseudo Code of Moving Through an Array (this is why iteration is used for this)
 ```
