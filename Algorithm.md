@@ -81,7 +81,7 @@ In Crack Coding, it have following way to design an algorithm
 	Functional languages tend to use recursion. (i.e. Haskell)
 	Imperative languages tend to use iteration. (i.e. Ruby)
 	Check out this Stack Overflow post for more info.
-## Traversal Techinics <a name="travesalTech></a>
+## Traversal Techinics <a name="travesalTech"></a>
 Traversal, to process data, we have following condition
 - For result or intermedia data, we may have partial information for cache/memoization
 - Sometimes, one primitive data cannot have enough information. We can defined our Class to hold more than one data field.
