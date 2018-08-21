@@ -8,6 +8,7 @@
 	* [Iterative Algorithms](#iter_algo)
 	* [Recursion Vs. Iteration](#recuVsiter)
 	* [Traversal Technics](#travesalTech)
+		* [Two Pointer](#two_pointers)
 * [The steps to choice right traversal tech](#choice_traversal)
 	* [Data Process](#data_process)
 * [Popular Traversal tech](#traversalTech)
@@ -144,6 +145,7 @@ Just like normal function call we have following three way to access data
 ## Two Pointers <a name="two_pointers"></a>
 - Two pointers in array
 - Two pointers in Linked List
+- Three Pointer: Fix one pointer, let use another two pointer to iterater.
 '''
   	front = 0;
   	tail = A.length()-1
