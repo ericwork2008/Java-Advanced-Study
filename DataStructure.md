@@ -27,6 +27,7 @@
 	* [Dijkstra](#dijkstra)
 * [Compare Sort](#Compare_Sort)
 * [Tries](#tries)
+* [Bit Manipulation](#BitManip)
 
 # Reference:	
 ---
@@ -948,7 +949,7 @@ public class Graph {
 }
 ```
 
-# Bit Manipulation
+# Bit Manipulation <a name="BitManip"></a>
 - 32 bit number: leading bit = 1, negative numbjer; leading bit = 0, positive number.
 -- -k = concat(1, 2^(n-1) - k)
 - Arithmetic(>>) & Logical(>>>) Shift
