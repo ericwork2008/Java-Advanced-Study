@@ -17,7 +17,8 @@
 	* [Sentinel Usage](#sentinel)
 	* [Breadth First Search](#bfs)
 	* [Depth First Search](#dfs)
-
+* [Sort](#sort)
+* [Dynamic Programming](#dp)
 
 
 # Big O (for Time and Space complexity) <a name="bigo"></a>
