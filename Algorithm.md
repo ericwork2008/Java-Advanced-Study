@@ -101,6 +101,13 @@ Recursion Tree/Combination/Permutation/etc. It depend on the problem. We have fo
 Iteration Combination
 - Search Space = Partial + Choice/Non-Choice for each Item
 
+### String Permutation
+- Direct method: Prefix + remain (recursive)
+- Build from Base: P(n) = insert Sn in each of P(n-1)
+### LinkedList
+- Fast runner Check Even/Odd node number. Fast runner always point to the odder
+- Recursive Stack data is a reverse of traversal
+- String/LinkedList length info always can be used in algorithm.
 
 ### Operation Tech: 
 1) Remaining list
