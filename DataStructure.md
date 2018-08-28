@@ -230,7 +230,7 @@ stack.push(item);
 A simple version of graph which haven't cycle, and each node can have a list of children
 - Binary Tree:  each node has up to  two chidren
 - Binary Search Tree: All left nodes <= current node.val < all right nodes
-- Balanced
+- Balanced: every subtree height difference <= 1
 - Completed Tree: every level is fully filled, except the last level which is filled from left to right.
 - Full binary Tree: each node have zero or 2 children, NO node will have 1 child
 - Perfect binary tree: full and complete
