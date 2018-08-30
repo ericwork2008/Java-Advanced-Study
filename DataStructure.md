@@ -294,7 +294,7 @@ void postOrderTraversal(TreeNode node) {
 - `node = node.right` is critical, otherwise it'll be in infinite loop
 - alternatively: we could set left = null, but that's disruptive to original structure, not recommended.
 
-## Expression Tree
+### Expression Tree
 ---
 ```
 Example
@@ -311,6 +311,12 @@ The expression tree will be like
                    [ 23 ][ 7 ] [ 1 ]   [ 2 ] .
 
 ```
+### Tree Technics
+- Compare two node in a tree. We have two different trace way, one kind for each node have parent link. Another kind for each node haven't parent link.
+- To match two tree, we can use recursion to match each node.
+- If you want select tree node randomly. We need use radom(size) to get the index. We can choice left or right by the index.
+- Graph/tree path sum. We can use recursive to choice root or no.
+
 ## Heap
 Heap Property (Min/Max Heap)
 
