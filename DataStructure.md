@@ -695,16 +695,16 @@ public class Graph {
     * 	==============
        MST-PRIM(G,w,r)   O(E + V lgV)
            for each u in G.V
-               u.key = MAX							//Set every key=MAX
+               u.key = MAX                      //Set every key=MAX
                u.p = NIL	
            r.key = 0
-           Q = G.V									//Q have all vertex
+           Q = G.V				//Q have all vertex
            while Q != empty
-               u = EXTRACT-MIN(Q)					//Get the min key value vertex
+               u = EXTRACT-MIN(Q)		//Get the min key value vertex
                for each v in G.Adj[u]
-                   if v in Q and w(u,v)< v.key     //Reduce v.key
+                   if v in Q and w(u,v)< v.key  //Reduce v.key
                        v.p = u
-                       v.key = w(u,v)
+                       v.key = w(u,v)           <== relax function, Pay attention here, different from Dijkstra
     */
    // A utility function to find the vertex with minimum key
    // value, from the set of vertices not yet included in MST
@@ -896,12 +896,13 @@ public class Graph {
     * DIJKSTRA(G,w,s) find short path
        INITIALIZE-SINGLE-SOURCE(G, s)
            S = empty
-           Q = G.V							//All vertex in the Queue
+           Q = G.V					//All vertex in the Queue
            while Q != empty
                u = EXTRACT-MIN(Q)			//u is visited here
                S = S U {u}
-               for each vertex in G.Adj[u]	//Need by pass visited vertex
-                   RELAX(u,v,w)
+               if (v ∈ Q) and w(u,v) < v.key            // by pass visited node
+                    v.parent = u
+                    v.key = w(u,v) + u.key               <== relax function, Pay attention here
     */
    // Funtion that implements Dijkstra's single source shortest path
    // algorithm for a graph represented using adjacency matrix
