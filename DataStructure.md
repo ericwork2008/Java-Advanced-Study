@@ -129,6 +129,7 @@ Array have following frequently used methods
 - Partial sort: Arrays.sort(arr, 0, arr.length())
 - Copy: Arrays.copyOf(arr, arr.length())
 - target=Arrays.copyOfRange(original,from,to)
+- System.arraycopy(source, 3, destination, 2, 5)
 - O(1) insertion on average. 
 - 2darray data[][] size is data.length * data[0].length
 ```
