@@ -14,3 +14,11 @@ https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/
 
 # JUnit inside
 https://www.ibm.com/developerworks/cn/java/j-lo-junit-src/index.html
+
+
+#
+InterviewCake
+https://www.hiredintech.com/classrooms/system-design/lesson/60
+https://www.educative.io/collection/5642554087309312/5679846214598656
+https://www.reddit.com/r/cscareerquestions/comments/1jov24/heres_how_to_prepare_for_tech_interviews/
+
