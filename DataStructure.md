@@ -320,6 +320,10 @@ The expression tree will be like
 
 ## Heap
 Heap Property (Min/Max Heap)
+- MAX-HEAPIFY O(lg n)
+- BUILD_MAX_HEAP build heap; O(n)
+- HEAPSORT, O(nlog n)
+- MAX-HEAP-INSERT, HEAP-EXTRACT-MAX, HEAP-INCREASE-KEY, and HEAP-MAXIMUM; O(log n)
 
 ## Tries
 ---
