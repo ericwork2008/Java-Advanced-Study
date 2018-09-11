@@ -236,7 +236,23 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - Completed Tree: every level is fully filled, except the last level which is filled from left to right.
 - Full binary Tree: each node have zero or 2 children, NO node will have 1 child
 - Perfect binary tree: full and complete
-
+## Binary search tree
+- insert(val)/find(val)/findmin()/next_large(node x)
+```
+next_large(node x) {
+    if(x.right!=null) 
+        return minValueofTree(x.right)
+    else {
+        //reach a node which is the left child of his parent
+	y=parent(x);
+	while(y !=null && x == y.right){
+	    x = y;
+	    y = parent(y);
+	}
+	return y;
+    }
+}
+```
 ## Binary Tree Traversal <a name="Binary_Tree_Traversal"></a>
 - preorder, inorder, post-order
 - inorder more often
