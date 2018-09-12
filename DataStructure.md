@@ -16,6 +16,8 @@
 		* [Inorder Traversal](#Inorder_Traversal)
 		* [Preorder Traversal](#Preorder_Traversal)
 		* [Post order Traversal](#Postorder_Traversal)
+	* [Balance Search Tree](#blancest)
+		* [AVL Tree](#avltree)
 	* [Convert DFS to while loop by Stack](#dfs_to_loop_by_stack)
 * [Graphs](#Graphs)
 	* [Define Graph](#graphs_definition)
@@ -355,18 +357,40 @@ Heap Property (Min/Max Heap)
 - https://en.wikipedia.org/wiki/Interval_tree
 - https://www.geeksforgeeks.org/interval-tree/
 
-## Red Black Tree
+## Balance Search Tree <a name="blancest"></a>
+- AVL Tree
+- B-Trees/2-3-4 Trees
+- Red-Black Trees
+- Splay-Trees
+- Skip Lists
+- Scapegoat Trees
+- Treaps
+
+### Red Black Tree
 - one kind of self-balancing binary search tree
 - Each node of the binary tree has an extra bit, and that bit is often interpreted as the color (red or black) of the node
 - search O(logn), n = total # of nodes in the tree
 - deletion/insertion/tree rearrangement && coloring: O(logn)
 
-## B-Tree
+### B-Tree
 - https://en.wikipedia.org/wiki/B-tree
 
-## AVL Tree
-- The sub-trees of every node differ in height by at most one.
+### AVL Tree <a name="avltree"></a>
+- Balance: The sub-trees of every node differ in height by at most one.
 - Every sub-tree is an AVL tree
+- height < 2 log Nh, Nh is the # nodes in height-h AVL tree
+- Rotation: From Voilation Node to heavy sub tree, we have Right-Right, Right-Left, Left-Left, Left-Right. When Rotation we following the order from the Heavy-sub tree to the voilation Node.
+- Right-Right/Left-Left only related with 2 node. Left/Right Rotation
+- Right-Left/Left-Right relates with 3 Nodes. Right-Left Rotation/Left-Right Rotation. 
+
+- Operations: Insert 1.Insert as in Simple BST; 2. Work your way up tree, restoring AVL property.
+- AVL Sort: 1) insert each item into AVL tree. O(nlogn); 2)in-order traversal; 
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
 
 ### Usage
 - Storage system than read/write large blocks of data.
