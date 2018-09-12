@@ -386,11 +386,17 @@ Heap Property (Min/Max Heap)
 - Operations: Insert 1.Insert as in Simple BST; 2. Work your way up tree, restoring AVL property.
 - AVL Sort: 1) insert each item into AVL tree. O(nlogn); 2)in-order traversal; 
 
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
+| Priority Queue ADT   |      Heap      |  AVL Tree |
+|----------------------|:--------------:|----------:|
+| Q=new-empty-queue()  |  O(1)          | O(1)      |
+| Q.insert(x)          |  O(logn)       |  O(logn)  |
+| x=Q.deletemin()      | O(logn)        |  O(logn)  |
+| x=Q.findmin()        | O(1)           |  O(logn)-> O(1) |
+| S=new-empty()        |  O(1)          |  O(1)     |
+| x=Q.insert(x)        | O(logn)        |  O(logn)  |
+| x=Q.delete(x)        | O(n)           |  O(logn)  |
+| y=S.predecessor(x)   | O(n)           |  O(logn)  |
+| y=S.successor(x)     | O(n)           |  O(logn)  |
 
 ### Usage
 - Storage system than read/write large blocks of data.
