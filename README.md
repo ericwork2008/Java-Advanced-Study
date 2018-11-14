@@ -16,6 +16,11 @@ private void method(String... args) {}
 3) Java static variables will be ininitialized to default value.
 4) Garbage collection cannot make sure finalize called on time. 
 5) Java 7 introduced try-with-resources & AutoCloseable interface to free the resource automatically.
+## Java Object common Methond
+1) Clone need avoid final member. because final have issue to reassign
+2) Clone need avoid call supper clone, or else will share some data user don't want share.
+3) Clone can be better with copy constructor like C++. 
+4) == Reflexive/Symmetric/Transitive/Consistent, equals(null) always return false.
 
 ### Visibility
 |Modifier   | Package     | Subclass    | Everyone Else |
