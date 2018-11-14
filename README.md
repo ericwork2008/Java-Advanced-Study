@@ -5,6 +5,20 @@ I will update it everyday for Java skill improvement.
 [Basic java Core]() | [Java 多线程]()
 ---- | --- 
 
+## Java Object Initialization/Finalizer
+1) JVM will create a default constructor if code doesn't define one
+2) Static initial block will be called before constructor. One class can have multiple initial blocks
+3) Java static variables will be ininitialized to default value.
+4) Garbage collection cannot make sure finalize called on time. 
+5) Java 7 introduced try-with-resources & AutoCloseable interface to free the resource automatically.
+
+### Visibility
+|Modifier   | Package     | Subclass    | Everyone Else |
+| ------    | ----------- | ----------- | ----------- |
+| public    | accessible  |accessible   | accessible  |
+| protected | accessible  | accessible  | not accessible|
+| no modifier | accessible | not accessible | not accessible |
+| private   | not accessible | not accessible | not accessible |
 
 ##Java basic study
 BOOK Thinking Java
