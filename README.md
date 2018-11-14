@@ -6,9 +6,9 @@ I will update it everyday for Java skill improvement.
 ---- | --- 
 ## Varargs parameter
 The three dots can only be used in a method argument, and are called 'varargs'. It means you can pass in an array of parameters without explicitly creating the array.
-'''
+```
 private void method(String... args) {}
-'''
+```
 
 ## Java Object Initialization/Finalizer
 1) JVM will create a default constructor if code doesn't define one
