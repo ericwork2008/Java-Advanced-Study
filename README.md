@@ -30,8 +30,17 @@ private void method(String... args) {}
 | no modifier | accessible | not accessible | not accessible |
 | private   | not accessible | not accessible | not accessible |
 
+## Java Interface
+1) Interface include nested interfaces, classes, enumerations, annotations
+2) Every declaration is public
+3) Method is abstract
+4) Const field is implicitly static and final
+5) Nested interfaces/classes/emumeration is public and static
+6) Marker interface (Clonable & Serializable)
+
 ##Java basic study
 BOOK Thinking Java
+Advanced Java http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Advanced-java.pdf
 
 ##Java Interview questions
 https://www.edureka.co/blog/interview-questions/java-interview-questions/
