@@ -1,6 +1,7 @@
 >The site just my Java Study recording. If any people have advice please let me know. Great thanks
 
 I will update it everyday for Java skill improvement.
+Reference Book: Thinking Java & Core java Made simple in books24x7
 
 [Basic java Core]() | [Java 多线程]()
 ---- | --- 
