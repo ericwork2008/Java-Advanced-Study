@@ -39,6 +39,9 @@ private void method(String... args) {}
 5) Nested interfaces/classes/emumeration is public and static
 6) Marker interface (Clonable & Serializable)
 
+## Final variable
+It is not necessary to initialize the value of final variable at the time of declaration. It can be initialized at the time of declaration, With the help of block OR initialize it by using constructor.
+
 ##Java basic study
 BOOK Thinking Java
 Advanced Java http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Advanced-java.pdf
