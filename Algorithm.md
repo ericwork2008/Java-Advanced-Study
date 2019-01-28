@@ -172,17 +172,16 @@ Just like normal function call we have following three way to access data
 --	base case
 - Sometimes binary search can have more than one traversal varables
 
-'''  
-	while(st < ed)
-	{
-    	int mid= st  + (ed-st)/2;
-    	if( r[mid] < target)
+```  
+	while(st < ed) { // ? st<=ed, if we need check target when st==ed
+    	    int mid= st  + (ed-st)/2;
+    	    if( r[mid] < target)
         	st = mid+1;
-    	else
+    	    else
         	ed = mid;
 	}
 	return st;
-'''
+```
 
 ## In Place swap
 ---
