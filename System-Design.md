@@ -19,3 +19,12 @@ Step 5: Scaling your abstract design/Close issues
 - Scalability
 - Efficiency
 - Different domain system many have different issues need care. For network server, we need think about balance/huge user/etc.
+
+
+# SOLID principles
+https://en.wikipedia.org/wiki/SOLID
+- Single responsibility principle
+- Open/closed principle
+- Liskov substitution principle
+- Interface segregation principle
+- Dependency inversion principle
