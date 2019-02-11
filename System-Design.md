@@ -24,7 +24,12 @@ Step 5: Scaling your abstract design/Close issues
 # SOLID principles
 https://en.wikipedia.org/wiki/SOLID
 - Single responsibility principle
+-- a class should have only a single responsibility
 - Open/closed principle
+-- open for extension, but closed for modification.
 - Liskov substitution principle
+-- objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.
 - Interface segregation principle
+-- many client-specific interfaces are better than one general-purpose interface
 - Dependency inversion principle
+-- depend upon abstractions, [not] concretions
