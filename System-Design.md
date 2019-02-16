@@ -1,4 +1,5 @@
 https://www.hiredintech.com/classrooms/system-design/lesson/55
+https://www.educative.io/collection/5668639101419520/5649050225344512
 
 # Five Steps for the System Design
 Step 1.  Constraints and use cases (Requirement & Use Case clarify)
