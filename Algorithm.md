@@ -1,3 +1,6 @@
+[Basic Theory](Algorithm.md) | [Problem]()
+
+
 # Table of contents
 * [Big O](#bigo)
 	* [Amotized Time](#amotize_time)
