@@ -1,5 +1,5 @@
-[Basic Theory](Algorithm.md) | [Problem]()
----- | ----
+[Think in Algorithm](Thinking_in_Algorithm.md) | [Basic Algorithm](Algorithm.md) | [Problem]()
+---- | ---- | ----
 
 # Table of contents
 * [Big O](#bigo)
