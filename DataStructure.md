@@ -39,6 +39,7 @@
 	https://softeng.polito.it/slides/07-JavaCollections.pdf
 	https://pdfs.semanticscholar.org/2d4a/a0f63c26dee36310c6c1ce3fe1fe4b4551e9.pdf
 	https://www.geeksforgeeks.org/data-structures/
+	https://www.edureka.co/blog/java-collections/
 	
 # Java Collection <a name="Java_Collection"></a>
 ------
