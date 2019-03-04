@@ -44,17 +44,8 @@
 ------
 Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 ## Collection 
-```
-		|----------Set
-		|-----------|-----SortedSet-------TreeSet
-		|			|------HashSet ----Linked HashSet
-		|
-		|----------Queue---LinkedList
-		|			|------PriorityQueue
-		|
-		|-----------List
-		|------ArrayList
-```
+![Collections Diagram](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/05/Collection-framework-hierarchy.png "Java Collection")
+
 ## Map
 ```
 	  |-----------Sorted Map
