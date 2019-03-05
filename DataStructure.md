@@ -113,7 +113,7 @@ The interal data structure to implement them is Array/Tree/Linked List
 
 
 
-# List <a name="List"></a>
+# List <a name="List"></a> 
 ## Vector/ArrayList/LinkedList
 ---
 |            |      Random    |Synchronize|  Enumeration | Iterator | ListIterator | Order     |
@@ -157,7 +157,7 @@ class Node{
 ```
 Iteration Linked List, sometimes will can use recursive/runner pointer
 
-# Set
+# Set <a name="Set"></a>
 
 # Stack <a name="Stack"></a>
 ---
