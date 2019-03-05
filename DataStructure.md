@@ -1,9 +1,9 @@
 # Table of contents
 * [Reference](#Reference)
 * [Java Collection](#Java_Collection)
-* [List]
-	* [Vector/ArrayList/LinkedList](#Linked_List)
-* [Set]
+* [List] (#List)
+	* [Vector/ArrayList/LinkedList]
+* [Set] (#Set)
 	* [HashSet/LinkedHashSet/TreeSet]
 * [Array](#Array)
 * [String & Character](#String_Character)
@@ -111,6 +111,85 @@ The interal data structure to implement them is Array/Tree/Linked List
 	Using an Array as a List - Arrays.asList()
 	Java Collections.binarySearch
 
+
+
+# List <a name="List"></a>
+## Vector/ArrayList/LinkedList
+---
+|            |      Random    |Synchronize|  Enumeration | Iterator | ListIterator | Order     |
+|------------|:--------------:|----------:|-------------:|---------:|-------------:|----------:|
+| ArrayList  |  Random        | No        |  No          | Yes      | Yes         | Added |
+| Vector     |  Random        | Yes       |  Yes         | Yes      | Yes         | Added |
+| Linked List|  Sequential    | No        |  No          | Yes      | Yes         | Added |
+
+## ArrayList
+None of the methods of ArrayList are synchronized. So the ArrayList class is also not synchronized
+
+## Vector
+Vector is a legacy class. Vector is extends AbstractList and implements List, RandomAccess, Cloneable & Serializable interface.
+almost all the members of vector were synchronized. So it affects the concurrency of the application.
+
+## Linked List 
+---
+Linked List have Singly Linked List, it is a class which is extends AbstractSequentialList class and implements List, Deque, Cloneable & Serializable interface.
+LinkedList element can be synchronized. So that LinkedList class is also not synchronized. As the LinkedList is not synchronized so it doesn't affect the concurrency of an application.
+
+
+
+Example
+```
+class Node{
+	int data;
+	Node next;
+	public Node(int data){
+		this.data=data;
+		next=null;
+	}
+	void append(int d){
+		Node newNode = new Node(d);
+		Node current = this;
+		while(current.next!=null){
+			current=current.next;
+		}
+		current.next=newNode;
+	}
+}
+```
+Iteration Linked List, sometimes will can use recursive/runner pointer
+
+# Set
+
+# Stack <a name="Stack"></a>
+---
+- peek(), pop(), push(), isEmpty()
+- Stack<Object> stack = new Stack<>(); Push generic Object to stack
+	
+## Stack Usage <a name="stack_usage"></a>
+- Reverse Stack
+- stack, change recursive to no recursive
+- Stack can be implemented with LinkedList, adding/removing from same side of the list
+- Use Stack implement Queue
+- Use Stack for sort
+
+## Monotonous stack <a name="monotonous_stack"></a>
+---
+Monotonous stack template:
+```
+item = someItem; // ex: item in for loop
+while (!stack.isEmpty() && (item.property compareTo stack.peek().property)) {
+	topItem = stack.pop();
+	// Do something with the topItem
+}
+stack.push(item);
+```
+
+# Queue <a name="Queue"></a>
+---
+- add(),remove(), peek(), isEmpty(). For Java Queue Class, please refer to the #Java Collection
+- queue = new LinkedList<...>() Queue can use LinkedList. Add from the last/end of the list; Return/remove from the head of the list. 
+- PriorityQueue: new Comparator
+- PriorityQueue
+
 # Array <a name="Array"></a>
 ---
 Array have following frequently used methods
@@ -166,79 +245,6 @@ StringBuffer is a resizable array. Can be used to avoid high operation drawback 
 - Long a = 10; a.intValue() => int
 - Integer: Integer.parseInt("123")
 - Integer.parseInt("010", 2) = 2;
-
-# Vector/ArrayList/LinkedList
----
-|            |      Random    |Synchronize|  Enumeration | Iterator | ListIterator | Order     |
-|------------|:--------------:|----------:|-------------:|---------:|-------------:|----------:|
-| ArrayList  |  Random        | No        |  No          | Yes      | Yes         | Added |
-| Vector     |  Random        | Yes       |  Yes         | Yes      | Yes         | Added |
-| Linked List|  Sequential    | No        |  No          | Yes      | Yes         | Added |
-
-## ArrayList
-None of the methods of ArrayList are synchronized. So the ArrayList class is also not synchronized
-
-## Vector
-Vector is a legacy class. Vector is extends AbstractList and implements List, RandomAccess, Cloneable & Serializable interface.
-almost all the members of vector were synchronized. So it affects the concurrency of the application.
-
-## Linked List <a name="Linked_List"></a>
----
-Linked List have Singly Linked List, it is a class which is extends AbstractSequentialList class and implements List, Deque, Cloneable & Serializable interface.
-LinkedList element can be synchronized. So that LinkedList class is also not synchronized. As the LinkedList is not synchronized so it doesn't affect the concurrency of an application.
-
-
-
-Example
-```
-class Node{
-	int data;
-	Node next;
-	public Node(int data){
-		this.data=data;
-		next=null;
-	}
-	void append(int d){
-		Node newNode = new Node(d);
-		Node current = this;
-		while(current.next!=null){
-			current=current.next;
-		}
-		current.next=newNode;
-	}
-}
-```
-Iteration Linked List, sometimes will can use recursive/runner pointer
-# Stack <a name="Stack"></a>
----
-- peek(), pop(), push(), isEmpty()
-- Stack<Object> stack = new Stack<>(); Push generic Object to stack
-	
-## Stack Usage <a name="stack_usage"></a>
-- Reverse Stack
-- stack, change recursive to no recursive
-- Stack can be implemented with LinkedList, adding/removing from same side of the list
-- Use Stack implement Queue
-- Use Stack for sort
-
-## Monotonous stack <a name="monotonous_stack"></a>
----
-Monotonous stack template:
-```
-item = someItem; // ex: item in for loop
-while (!stack.isEmpty() && (item.property compareTo stack.peek().property)) {
-	topItem = stack.pop();
-	// Do something with the topItem
-}
-stack.push(item);
-```
-
-# Queue <a name="Queue"></a>
----
-- add(),remove(), peek(), isEmpty(). For Java Queue Class, please refer to the #Java Collection
-- queue = new LinkedList<...>() Queue can use LinkedList. Add from the last/end of the list; Return/remove from the head of the list. 
-- PriorityQueue: new Comparator
-- PriorityQueue
 
 # Tree <a name="Tree"></a>
 ---
