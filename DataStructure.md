@@ -47,7 +47,7 @@
 ------
 Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
 ## Collection 
-![Collections Diagram](collections framework overview.png"Java Collection")
+![Collections Diagram](https://github.com/ericwork2008/Java-Advanced-Study/blob/master/collections%20framework%20overview.png "Java Collection")
 
 ## Map
 ```
