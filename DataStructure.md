@@ -165,11 +165,29 @@ StringBuffer is a resizable array. Can be used to avoid high operation drawback 
 - Integer: Integer.parseInt("123")
 - Integer.parseInt("010", 2) = 2;
 
-# Vector vs. ArrayList
+# Vector/ArrayList/LinkedList
 ---
-# Linked List <a name="Linked_List"></a>
+|            |      Random    |Synchronize|  Enumeration | Iterator | ListIterator | Order     |
+|------------|:--------------:|----------:|-------------:|---------:|-------------:|----------:|
+| ArrayList  |  Random        | No        |  No          | Yes      | Yes         | Added |
+| Vector     |  Random        | Yes       |  Yes         | Yes      | Yes         | Added |
+| Linked List|  Sequential    | No        |  No          | Yes      | Yes         | Added |
+
+## ArrayList
+None of the methods of ArrayList are synchronized. So the ArrayList class is also not synchronized
+
+## Vector
+Vector is a legacy class. Vector is extends AbstractList and implements List, RandomAccess, Cloneable & Serializable interface.
+almost all the members of vector were synchronized. So it affects the concurrency of the application.
+
+## Linked List <a name="Linked_List"></a>
 ---
-Linked List have Singly Linked List
+Linked List have Singly Linked List, it is a class which is extends AbstractSequentialList class and implements List, Deque, Cloneable & Serializable interface.
+LinkedList element can be synchronized. So that LinkedList class is also not synchronized. As the LinkedList is not synchronized so it doesn't affect the concurrency of an application.
+
+
+
+Example
 ```
 class Node{
 	int data;
