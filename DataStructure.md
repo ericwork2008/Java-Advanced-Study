@@ -1,15 +1,17 @@
 # Table of contents
 * [Reference](#Reference)
 * [Java Collection](#Java_Collection)
+* [List]
+	* [Vector/ArrayList/LinkedList](#Linked_List)
+* [Set]
+	* [HashSet/LinkedHashSet/TreeSet]
 * [Array](#Array)
 * [String & Character](#String_Character)
 	* [StringBuffer](#StringBuffer)
-* [Linked List](#Linked_List)
 * [Stack](#Stack)
 	* [Stack Usage](#stack_usage)
 	* [Monotonous stack](#monotonous_stack)
 * [Queue](#Queue)
-* [ArrayLists/Vector](#arraylist)
 * [Heaps](#heaps)
 * [Tree](#Tree)
 	* [Binary Tree Traversal](#Binary_Tree_Traversal)
