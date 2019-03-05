@@ -46,14 +46,7 @@
 # Java Collection <a name="Java_Collection"></a>
 ------
 Java Classes (Collections & Map), Collections have List/Set/Queue  & Map
-## Collection 
 ![Collections Diagram](https://github.com/ericwork2008/Java-Advanced-Study/blob/master/collections%20framework%20overview.png "Java Collection")
-
-## Map
-```
-	  |-----------Sorted Map
-	  |-----------HashMap-----Linked HashMap
-```
 
 ## Collection/Map interfaces
 The interal data structure to implement them is Array/Tree/Linked List
@@ -157,7 +150,20 @@ class Node{
 ```
 Iteration Linked List, sometimes will can use recursive/runner pointer
 
-# Set <a name="Set"></a>
+# Set <a name="set"></a>
+|            |      Random    |Synchronize|  Enumeration | Iterator |  Order     |
+|------------|:--------------:|----------:|-------------:|---------:|-----------:|
+| HashSet    |  Random        | No        |  No          | Yes      |  Added     |
+| Linked HashSet|  Sequential | No        |  No          | Yes      |  Added     |
+| TreeSet    |  Random        | No        |  No          | Yes      |  Added     |
+
+# Map <a name="map"></a>
+|            |      Random    |Synchronize|   Order    |
+|------------|:--------------:|----------:|-----------:|
+| HashMap    |  Random        | No        | unSorted   |
+| Linked HashMap|  Sequential | No        | Added      |
+| TreeMap    |  Random        | No        | Sorted     |
+| HashTable  |  Random        | Yes       | unSorted   |
 
 # Stack <a name="Stack"></a>
 ---
