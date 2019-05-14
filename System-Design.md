@@ -34,3 +34,22 @@ https://en.wikipedia.org/wiki/SOLID
 -- many client-specific interfaces are better than one general-purpose interface
 - Dependency inversion principle
 -- depend upon abstractions, [not] concretions
+
+# Reference Class
+Grokking the System Design Interview
+http://t.cn/EInHDXQ
+
+Intro to:Architecture and Systems Designs
+http://t.cn/EzFLeYN
+
+What every software engineer should know about real-time data’s unifying abstraction
+http://t.cn/RLftRL4
+
+《系统设计入门》
+http://t.cn/RXVkSUL
+
+Freeman Zhang 的 System design 总结
+http://t.cn/R0Hn8lZ
+
+http://t.cn/EInQeY6
+http://t.cn/EIn8hPd
