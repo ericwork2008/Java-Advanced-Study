@@ -638,6 +638,7 @@ public class Graph {
 }
 ```
 ## DFS <a name="dfs"></a>
+DFS, double-E (Enter/Exit), U 包 Edge.
 ```
     /*
       void DFS(G) {
@@ -652,13 +653,16 @@ public class Graph {
        
        void DFS-VISIT(G, u) {
         	time = time + 1 // white vertex u has just been discovered
+		//Pre-Process u
         	u.d = time
         	u.visited = true
         	for each v in G.Adj[u] // explore edge (u,v)
+		        //Process Edge
         		if v.visited == false
         			v.p = u
         			DFS-VISIT(G, v);
         	time = time + 1
+		//Post-Process u
        }
      */
    // A function used by DFS
@@ -688,6 +692,7 @@ public class Graph {
 ```
 
 ## BFS <a name="bfs"></a>
+BFS, I-E-W, PDP(Parent/Discoveried/Processed), u 包 edge
 ```
    /*
    public void BFS(Graph G, Vertex s) {
@@ -715,7 +720,7 @@ public class Graph {
    void BFS(int s) {
        // Mark all the vertices as not visited(By default
        // set as false)
-       boolean visited[] = new boolean[V];
+       boolean visited[] = new boolean[V]; //visited for Discovered & Processed
 
        // Create a queue for BFS. FIFO queue
        LinkedList<Integer> queue = new LinkedList<Integer>();		//Queue, multiple queue for special case
@@ -731,6 +736,8 @@ public class Graph {
            s = queue.poll();
            System.out.print(s+" ");
 
+           //Pre-Process u
+	   
            // Get all adjacent vertices of the dequeued vertex s
            // If a adjacent has not been visited, then mark it
            // visited and enqueue it
@@ -738,12 +745,14 @@ public class Graph {
            while (i.hasNext())
            {
                int n = i.next();
+	       //Process Edge
                if (!visited[n])
                {
                    visited[n] = true;
                    queue.add(n);
                }
            }
+	   //Post-Process u
        }
    }
 ```
@@ -771,7 +780,7 @@ public class Graph {
               topologicalSortUtil(i, visited, stack);
        }
        
-       // Post-Order process.
+       // Post-Process u
        // Push current vertex to stack which stores result
        // In Stack node haven't next. Looks like put no successor in first.
        stack.push(new Integer(v));
@@ -799,6 +808,7 @@ public class Graph {
    }
 ```
 ## PRIM MST  <a name="prim"></a>
+PRIM, DPI, move from NonTree into Tree
 ```
 
    /**
@@ -889,6 +899,7 @@ public class Graph {
    }
 ```
 ## MST-KRUSKAL <a name="kruskal"></a>
+Kruskal, go through Edges, union components
 ```
    // A utility function to find set of an element i
    // (uses path compression technique)
@@ -1002,6 +1013,7 @@ public class Graph {
    
  ```
  ## Dijkstra <a name="dijkstra"></a>
+ Dijkstra, DPI, move unknown to known
  ```
    /**
     * DIJKSTRA(G,w,s) find short path
