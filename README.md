@@ -57,6 +57,9 @@ https://courses.edx.org Introduction to Theoretical Computer Science
 # JUnit inside
 https://www.ibm.com/developerworks/cn/java/j-lo-junit-src/index.html
 
+# Java FW
+## Akka
+https://www.youtube.com/watch?v=lPTqcecwkJg
 
 #
 InterviewCake
