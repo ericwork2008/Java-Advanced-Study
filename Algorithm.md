@@ -151,20 +151,23 @@ Just like normal function call we have following three way to access data
 '''
 
 ## Binary Search <a name="bin_search"></a>
-- Different point have different purpose.
+- Different pointer have different purpose.
 - The iterator have clear definition. for loop / do-while /while-do / recursive will iterate in
---	the range of condition!
---	begin and end/termination
---	base case
+-- the range of condition!
+-- begin and end/termination
+-- base case
 - Sometimes binary search can have more than one traversal varables
 
+小于等于，三判断
 ```  
-	while(st < ed) { // ? st<=ed, if we need check target when st==ed
-    	    int mid= st  + (ed-st)/2;
-    	    if( r[mid] < target)
+	while(st <= ed) { // ? st<=ed, if we need check target when st==ed
+    	    int mid= st  + (ed-st)/2; //Avoid overflow
+    	    if( r[mid]==target) {
+	        return mid;           //terminate
+	    }else if(r[mid] < target)
         	st = mid+1;
     	    else
-        	ed = mid;
+        	ed = mid-1;
 	}
 	return st;
 ```
