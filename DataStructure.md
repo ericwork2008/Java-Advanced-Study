@@ -432,6 +432,11 @@ HashMap<>
 - * node is often used to indicate complete words.
 - Can tell if string is a valid prefix in O(K) time, k = str.length
 
+https://en.wikipedia.org/wiki/Trie
+
+### TST (Ternary Search Tree)
+https://en.wikipedia.org/wiki/Ternary_search_tree
+
 ## Segment Tree
 - Another name: Interval Tree. 
 - https://en.wikipedia.org/wiki/Segment_tree
