@@ -106,7 +106,7 @@ The interal data structure to implement them is Array/Tree/Linked List
 
 
 
-# List <a name="List"></a> 
+# List  <a name="List"></a>
 ## Vector/ArrayList/LinkedList
 ---
 |            |      Random    |Synchronize|  Enumeration | Iterator | ListIterator | Order     |
@@ -285,7 +285,7 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - Full binary Tree: each node have zero or 2 children, NO node will have 1 child
 - Perfect binary tree: full and complete
 ## Binary search tree
-# ADT Operations
+### BST ADT Operations
 Insert(k): Insert an element k into the tree.
 Delete(k): Delete an element k from the tree.
 Search(k): Search a particular value k into the tree if it is present or not.
