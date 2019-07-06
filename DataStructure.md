@@ -157,23 +157,37 @@ Iteration Linked List, sometimes will can use recursive/runner pointer
 | Linked HashSet|  Sequential | No        |  No          | Yes      |  Added     |
 | TreeSet    |  Random        | No        |  No          | Yes      |  Added     |
 
+Java TreeSet is implemented by red-black balanced binary search tree. Add/Remove/Contains have O(log(n)) complexity.
+
 # Map <a name="map"></a>
 |            |      Random    |Synchronize|   Order    |
 |------------|:--------------:|----------:|-----------:|
 | HashMap    |  Random        | No        | unSorted   |
 | Linked HashMap|  Sequential | No        | Added      |
 | TreeMap    |  Random        | No        | Sorted     |
-| HashTable  |  Random        | Yes       | unSorted   |
+| HashTable  |  Random        | Yes       | unSorted   
+
+Java TreeMap implemented by red-black balance binary tree. Key is stored in order.
 
 # Stack <a name="Stack"></a>
----
+Stack<T> drives from Vector<T> so radom access is possible, this void the stack interfaces. Stack<T> isn't drived from collection interface. 
+	
+## Stack ADT Operations
+Push(k): Adds a new item to the top of the stack
+Pop(): Remove an element from the top of the stack and return its value.
+Top(): Returns the value of the element at the top of the stack
+Size(): Returns the number of elements in the stack
+IsEmpty(): determines whether the stack is empty. It returns 1 if the stack is empty or return 0.
+
+## Stack Java Implementation
 - peek(), pop(), push(), isEmpty()
 - Stack<Object> stack = new Stack<>(); Push generic Object to stack
+- We can use ArrayDequeue<T> for Stack. pop()/push()/peekLast()/size()/isEmpty()
+- Stack can be implemented with LinkedList, adding/removing from same side of the list
 	
 ## Stack Usage <a name="stack_usage"></a>
 - Reverse Stack
 - stack, change recursive to no recursive
-- Stack can be implemented with LinkedList, adding/removing from same side of the list
 - Use Stack implement Queue
 - Use Stack for sort
 
@@ -190,23 +204,31 @@ stack.push(item);
 ```
 
 # Queue <a name="Queue"></a>
----
+## Queue ADT operations
+Add(): Add a new element to the back of the queue.
+Remove(): remove an element from the front of the queue and return its value.
+Front(): return the value of the element at the front of the queue.
+Size(): returns the number of elements inside the queue.
+IsEmpty(): returns 1 if the queue is empty otherwise return 0
+
+## Queue Java implementation
 - add(),remove(), peek(), isEmpty(). For Java Queue Class, please refer to the #Java Collection
 - queue = new LinkedList<...>() Queue can use LinkedList. Add from the last/end of the list; Return/remove from the head of the list. 
+- ArrayDeque() also can be used as Queue. add()/remore()/peekFirst()
 - PriorityQueue: new Comparator
 - PriorityQueue
 
 # Array <a name="Array"></a>
----
-Array have following frequently used methods
+
+## Java Array
 ```
 - ArrayList.add(index, elem);
-- Arrays.asList([1,2,3]);
+- Arrays.asList(1,2,3);
 - Arrays.toString(int[] arr) => string representation: "[1,2,3,4]"
 - Integer[] array = {1, 2, 3};
 - new ArrayList(Arrays.asList(array))
 - list.add(index, object)
-- list.removeRange[x, y)
+- list.removeRanege[x, y)
 - Partial sort: Arrays.sort(arr, 0, arr.length())
 - Copy: Arrays.copyOf(arr, arr.length())
 - target=Arrays.copyOfRange(original,from,to)
@@ -263,6 +285,13 @@ A simple version of graph which haven't cycle, and each node can have a list of 
 - Full binary Tree: each node have zero or 2 children, NO node will have 1 child
 - Perfect binary tree: full and complete
 ## Binary search tree
+# ADT Operations
+Insert(k): Insert an element k into the tree.
+Delete(k): Delete an element k from the tree.
+Search(k): Search a particular value k into the tree if it is present or not.
+FindMax(): Find the maximum value stored in the tree.
+FindMin(): Find the minimum value stored in the tree.
+
 - insert(val)/find(val)/findmin()/next_large(node x)
 ```
 next_large(node x) {
@@ -362,11 +391,39 @@ The expression tree will be like
 - Graph/tree path sum. We can use recursive to choice root or no.
 
 ## Heap
+### Heap ADT operations
+Insert() - Adding a new element to the heap. O(log(n))
+remove() - Extracting max for max heap case (or min for min heap case). O(log(n))
+Heapify() – To convert a list of numbers in an array into a heap. Time Complexity O(n)
+
 Heap Property (Min/Max Heap)
 - MAX-HEAPIFY O(lg n)
 - BUILD_MAX_HEAP build heap; O(n)
 - HEAPSORT, O(nlog n)
 - MAX-HEAP-INSERT, HEAP-EXTRACT-MAX, HEAP-INCREASE-KEY, and HEAP-MAXIMUM; O(log n)
+### Heap Java implementation
+Java PriorityQueue is implemented using binary heap data structure.
+
+PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+
+## Hash-Table
+### Hash-Table ADT operations
+Insert(x): Add object x to the data set.
+Delete(x): Delete object x from the data set.
+Search(x): Search object x in data set.
+
+###  HashTable Java implementation
+HashSet (Storage: Hash table)
+LinkedHashSet (Storage: hash table and a linked list)
+
+|            |      Random    |Synchronize|  Enumeration | Iterator |  Order     |
+|------------|:--------------:|----------:|-------------:|---------:|-----------:|
+| HashSet    |  Random        | No        |  No          | Yes      |  Added     |
+| Linked HashSet|  Sequential | No        |  No          | Yes      |  Added     |
+
+HashMap<>
+
 
 ## Tries
 ---
