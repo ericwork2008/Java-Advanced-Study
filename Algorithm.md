@@ -4,6 +4,7 @@
 # Table of contents
 * [Big O](#bigo)
 	* [Amotized Time](#amotize_time)
+	* [Master Method](#master_method)
 * [Steps for Solution](#solution_steps)
 	* [How to design&develope an algorithm](#dev_algo)
 * [Traversal techinics](#traversal_tech)
@@ -33,6 +34,17 @@ big theta means both O & omega
 Normally we think about three case for Big O analysis: best/worse/Excepted
 
 Recursive function that makes multiple calls, the runtime will often look like O(branch^depth)
+## Master Method
+T(n) = aT (n/b)+f(n) divide-and-conquer algorithm. Each problem of size n is decomposed into a
+problems of size n/b. Each subproblem of size k takes O(f(k)) time to deal with
+internally, between partitioning and merging. The total time for the algorithm is
+the sum of these internal costs, plus the overhead of building the recursion tree.
+
+nlogb a is the width(leaves), logb n is hight
+1. Too many leaves, 		If f(n) = O(nlogb a−epslon) for some constant epslon > 0, then T(n) = Θ(nlogb a).
+2. Equal work per level, 	If f(n) = Θ(nlogb a), then T(n) = Θ(nlogb a lg n).
+3. Too expensive a root,	If f(n) = Ω(nlogb a+epslon) for some constant epslon > 0, and if af(n/b) ≤ cf(n) for
+some c < 1, then T(n) = Θ(f(n)).
 
 ## Amotized Time <a name="amotize_time"></a>
 ---
