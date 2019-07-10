@@ -34,7 +34,7 @@ big theta means both O & omega
 Normally we think about three case for Big O analysis: best/worse/Excepted
 
 Recursive function that makes multiple calls, the runtime will often look like O(branch^depth)
-## Master Method
+## Master Method <a name="master_method"></a>
 T(n) = aT (n/b)+f(n) divide-and-conquer algorithm. Each problem of size n is decomposed into a
 problems of size n/b. Each subproblem of size k takes O(f(k)) time to deal with
 internally, between partitioning and merging. The total time for the algorithm is
