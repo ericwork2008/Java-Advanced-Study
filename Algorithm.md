@@ -50,6 +50,9 @@ some c < 1, then T(n) = Θ(f(n)).
 ---
 [wiki link](https://en.wikipedia.org/wiki/Amortized_analysis)
 
+# Steps for Solution <a name="solution_steps"></a>
+- CICCT
+Constraints/Ideas Generation/Complexities/Coding/Testing
 
 # Keywords
 ---
