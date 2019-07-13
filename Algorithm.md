@@ -174,6 +174,8 @@ Just like normal function call we have following three way to access data
 - Sometimes binary search can have more than one traversal varables
 
 小于等于，三判断
+
+iteration
 ```  
 	while(st <= ed) { // ? st<=ed, if we need check target when st==ed
     	    int mid= st  + (ed-st)/2; //Avoid overflow
@@ -185,6 +187,30 @@ Just like normal function call we have following three way to access data
         	ed = mid-1;
 	}
 	return st;
+```
+recursion
+```
+    int binarySearch(int arr[], int l, int r, int x) 
+    { 
+        if (r >= l) { 
+            int mid = l + (r - l) / 2; 
+  
+            // If the element is present at the 
+            // middle itself 
+            if (arr[mid] == x) 
+                return mid; 
+  
+            // If element is smaller than mid, then 
+            // it can only be present in left subarray 
+            if (arr[mid] > x) 
+                return binarySearch(arr, l, mid - 1, x); 
+	    else
+                return binarySearch(arr, mid + 1, r, x); 
+        } 
+  
+
+        return -1; 
+    } 
 ```
 
 ## In Place swap
