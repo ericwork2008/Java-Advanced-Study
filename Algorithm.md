@@ -294,6 +294,18 @@ Traversal, we need care about the edge.
 ### DFS recursion techinic
 	- Sometimes when we traveral in an list which may have several dementions. The List can be sorted by one demention, when we decide go to next level recursion, we can use come valid check to make sure next recursion can meet some other dementions' requirement.
 	
+# Sort <a name="sort"></a>
+
+|            	| AverageTime   |Best Time  |Worse Time  | Space      | Stability
+|---------------|:-------------:|----------:|-----------:|-----------:|-----------:|
+| Bubble-Sort   |  O(n2)        | O(n2)     | unSorted   |O(1)
+| Selection-Sort|  O(n2) 	| O(n2)     | Added      |O(1)
+| Insertion-Sort|  O(n2)        | O(n)      | Sorted     |O(1)
+| Heap-Sort  	|  O(n*log(n))  |O(n*log(n))| unSorted   |O(1)
+| Merge-Sort 	|  O(n*log(n)) 	|O(n*log(n))|            |O(n)
+| QuickSort  	|  O(n*log(n))	|O(n*log(n))|O(n2)	 |O(n)worse,O(log(n))
+| BucketSort 	|  O(nk) 	|O(nk)	    |            |O(1)
+| CountingSort	|		|	    |            |
 # Math
 ## Shuffle
 - subset have 1 or k element.
