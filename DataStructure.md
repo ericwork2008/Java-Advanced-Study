@@ -1186,3 +1186,10 @@ class MyCompare implements Comparator<MyClass>
     }
 }
 ```
+
+
+# Boundary cases
+## LinkList
+- Empty linked list.
+- Single node case.
+- General case.
