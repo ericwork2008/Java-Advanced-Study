@@ -63,6 +63,8 @@ The interal data structure to implement them is Array/Tree/Linked List
 		void clear()
 		Object[] toArray()
 		Iterator iterator()
+		sort(List<T> list)
+		sort(List<T> list, Comparator<? super T> c)
 	Map:
 		Object put(Object key, Object value)
 		Object get(Object key)
