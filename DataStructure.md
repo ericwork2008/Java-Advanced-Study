@@ -1190,8 +1190,12 @@ class MyCompare implements Comparator<MyClass>
 ```
 
 
-# Boundary cases
+# Boundary cases for different Data Structure
 ## LinkList
 - Empty linked list.
 - Single node case.
 - General case.
+
+## Stack
+- isEmpty
+- Capacity (if it is using Array implementation)
