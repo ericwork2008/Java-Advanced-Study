@@ -234,7 +234,7 @@ IsEmpty(): returns 1 if the queue is empty otherwise return 0
 - Partial sort: Arrays.sort(arr, 0, arr.length())
 - Copy: Arrays.copyOf(arr, arr.length())
 - target=Arrays.copyOfRange(original,from,to)
-- System.arraycopy(source, 3, destination, 2, 5)
+- System.arraycopyarraycopy(source, sourcePos,dest,destPos,len)
 - O(1) insertion on average. 
 - 2darray data[][] size is data.length * data[0].length
 ```
