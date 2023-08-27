@@ -403,8 +403,10 @@ BFS只是算法的框架，具体问题还需要搭配其它的属性处理
 * 将Node A在放入queue时就设为visited，表明已经或将要处理。如果处理边需要用post-order.否则有个缺点是，如果本层中下一个节点B有指向A的边BA，由于A已经在visited列表中，就会错过对**边BA**的处理。所有在用BFS时，**一定要清楚，此算法是处理边还是节点**
 * 有些问题如果用DFS/backtracking会遇到cycle的问题，造成答案不准确 [https://leetcode.com/problems/word-ladder-ii/](https://leetcode.com/problems/word-ladder-ii/)
 
+{% code fullWidth="true" %}
 ```mermaid
 graph LR
+
 hit --> hot
 hot --> dot
 hot --> lot
@@ -415,6 +417,7 @@ dot --> lot
 lot --> log
 log --> cog
 ```
+{% endcode %}
 
 *   有的题目要记步数，一定注意的是，这个step的含义是推进到下一步，所以**只有下一步的candidates queue size()>0 steps 才可以+1**
 
