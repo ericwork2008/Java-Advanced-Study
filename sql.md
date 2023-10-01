@@ -1,6 +1,26 @@
 # SQL
 
+## REFERENCE
+
+{% embed url="https://www.w3schools.com/sql/" %}
+
 ## Basic
+
+{% embed url="https://www.nupanch.com/blog/the-easy-way-to-read-sql" %}
+
+From above blog, it explain the easyway to read the SQL
+
+```
+the database management system follows a specific order of execution -
+FROM (including any joins)
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+```
+
+Basic query syntax
 
 ```
 SELECT 'col' FROM 'table';
@@ -40,7 +60,17 @@ SELECT DISTINCT * FROM `table` LIMIT 3 OFFSET 1;
 SELECT * FROM `table` ORDER BY id;
 SELECT * FROM `table` ORDER BY id1 ASC, id2 DESC;
 SELECT * FROM `table` ORDER BY id DESC;
-//function
+//function COUNT, SUM, AVG, MIN, MAX, 
 SELECT COUNT(*), `id` FROM `table` GROUP BY xxx;
 ```
 
+6. `WHERE` & HAVING
+
+[https://www.geeksforgeeks.org/difference-between-where-and-having-clause-in-sql/](https://www.geeksforgeeks.org/difference-between-where-and-having-clause-in-sql/)
+
+```
+only supports columns that already exist in this table.
+Don't support columns in AS 
+
+But HAVING can use the columns in AS, but HAVING have performance issue
+```
