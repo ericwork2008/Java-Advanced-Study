@@ -8,6 +8,7 @@
   * [How to handle Trade-Offs](System-Design/how-to-handle-trade-offs.md)
   * [how the client know the image is located in CDN?](System-Design/how-the-client-know-the-image-is-located-in-cdn.md)
   * [How to update cache](System-Design/how-to-update-cache.md)
+* [Page](page.md)
 * [Steps for a Solution](Thinking\_in\_Algorithm.md)
 * [Graph](graph.md)
 * [SQL](sql.md)
