@@ -759,8 +759,6 @@ For unweigted graph不能用DFS的原因在于
 
     参考如果没有回路，则可以考虑DFS。下图中，由start出发红线最短
 
-![](broken-reference)
-
 ### Dijkstra <a href="#dijkstra" id="dijkstra"></a>
 
 For positive weighted graph. BFS基础上使用PriorityQueue + Reduce 方法. 由于Dijkstra需要维护PriorityQueue, 有时候会比BFS要慢！！！
@@ -1304,12 +1302,9 @@ Discovery\_Order(entry\_time) 是DFS的标号，low(reachable\_point)是不通�
 Cut Point 分为三类，
 
 * Root：有多余一个儿子. 判断是否有父亲来决定是Root，**也满足low\[v]==v**
-*   其它非root节点u 是cut point，iff 存在某个儿子w, low\[w] >= disc\_order\[u]. 分两类
-
-    * Parent Cut point: low\[v]==parent\[v], parent\[v]是cut point
-    * Bridge cut point: low\[v]==v && 不是leaf
-
-    ![](broken-reference)
+* 其它非root节点u 是cut point，iff 存在某个儿子w, low\[w] >= disc\_order\[u]. 分两类
+  * Parent Cut point: low\[v]==parent\[v], parent\[v]是cut point
+  * Bridge cut point: low\[v]==v && 不是leaf
 
 **Bridge**: disc\[u] < low\[v]则u->v 就是一个Bridge, A node u is head if disc\[u] = low\[u].
 
